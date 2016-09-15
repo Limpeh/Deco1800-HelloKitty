@@ -68,4 +68,57 @@ class CardSet{
 		return hand;
 	}
 }
+class game{
+	constructor(student,cardset,pairs,timer){
+		this.student=student;
+		this.pairs=pairs;
+		this.matches=0;
+		this.hand=cardset.drawhand;
+		this.cards=[];
+		this.score=0;
+		this.combo=0;
+		this.timer=timer;
+	}
+	createcards(){
+		for(int i=0;i<pairs;i++){
+			this.cards.push(this.hand[i].articlecard());
+			this.cards.push(this.hand[i].imageecard());
+		}
+	}
+	matchscore(){
+		this.score+=combo;
+		this.combo++;
+	}
+	resetcombo(){
+		this.combo=1;
+	}
+	checkmatch(a,b){
+		if(cards[a][0]==cards[b][0]){
+			matchscore();
+			this.matches++;
+			if (matches==pairs){
+				return 2;
+			} else{
+				return 1;
+			}
+		} else{
+			return 0;
+		}
+	}
+	timedown(){
+		timer=timer-1;
+		if(timer==0){
+			return 1;
+		} else{
+			timestop();
+			return 0;
+		}
+	}
+	timerun(){
+		var mytime = setInterval(timedown(), 1000);
+	}
+	timestop(){
+		clearInterval(mytime);
+	}
+}
 
