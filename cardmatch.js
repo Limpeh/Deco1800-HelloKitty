@@ -34,8 +34,24 @@ class student extends User{
 			this.teacherID=teacherID;
 			this.favourites=favourites;
 	}
+	addfav(fav){
+		this.favourites.push(fav);
+	}
 }
-
+class teacher extends User{
+		constructor(username,upassword,teacherID){
+			super(username,upassword);
+			this.teacherID=teacherID;
+			this.students=[];
+			this.stages=[];
+	}
+	addstudent(student){
+		this.students.push(student);
+	}
+	addstage(stage){
+		this.stages.push(stage):
+	}
+}
 class CardSet{
 	constructor(topic,cardlist){
 		this.topic=topic;
