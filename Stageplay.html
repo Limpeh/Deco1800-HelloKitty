@@ -1,0 +1,28 @@
+<DOCTYPE! html>
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<title>CardMatch</title>
+		<link href="style.css" type="text/css" rel="stylesheet"/>
+		<!--To add link to stylesheet and Javascript-->
+	</head>
+	<body>
+	
+	<h1 id="clock">60</h1>
+	
+	<script>
+		var count = 60;
+		var counter = setInterval(timer, 1000);
+	
+		function timer(){
+			count -=1;
+			if(count == 0){
+				clearInterval(counter);
+			
+			}
+			
+			document.getElementById('clock').innerHTML = count;
+		}
+	</script>
+	</body>
+</html>
