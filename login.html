@@ -3,25 +3,30 @@
 <head>
 <meta charset="utf-8">
 <title>CardMatch Login</title>
+<link href="login.css" type="text/css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Baloo+Tamma" rel="stylesheet">
 </head>
 
 <body>
 
 <div id="Banner">
 	<p><h1>CARDMATCH</h1></p>
-	<p><h3>The most fun you'll ever have while learning</h3></p>
+	<p><h3>The learning game</h3></p>
 </div>
 
-<p><h2>Sign In</h2></p>
 
-<form id="login" action="" method="POST">
-<p><label for="username">Username</label></p>
-<p><input type="text" id="username" name="logindets" placeholder="Username"/></p>
+<div id="sign_in">
+	<p><h2>Sign In</h2></p>
 
-<p><label for="password">Password</label></p>
-<p><input type="text" id="password" name="logindets" placeholder="Password"/></p>
-<p><input type="submit" value="Log in"></p>
-</form>
+	<form id="login" action="" method="POST">
+	<p><label for="username">Username</label></p>
+	<p><input type="text" id="username" name="logindets" placeholder="Username" class="login" /></p>
+
+	<p><label for="password">Password</label></p>
+	<p><input type="text" id="password" name="logindets" placeholder="Password" class="login"/></p>
+	<p><input type="submit" value="Log in"></p>
+	</form>
+</div>
 
 
 <p>New to Cardmatch? Click here to sign up!</p>
