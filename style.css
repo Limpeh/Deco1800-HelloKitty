@@ -1,3 +1,25 @@
 body {
-	background-color: blue;
+	background-color: white;
 }
+
+/* Start of mainstage css*/
+#container {
+	float:left;
+	position: relative;
+}
+
+.box{
+	float:left;
+	position:relative;
+	height:300px;
+	width:200px;
+	border: solid black;
+}
+
+#clockpic {
+	float:left;
+	position:relative;
+	height: 100px;
+	width: 100px;
+}
+/*End of mainstage css */
