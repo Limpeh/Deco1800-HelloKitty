@@ -125,13 +125,16 @@ class game{
 /****//****//****//****//****//****//****//****//****//****//****//***/
 ///////////////////////////////////////////////////////////////////////
 /****//****//****//****//****//****//****//****//****//****//****//***/
-
+	var keywordcards=[];
+	
 	var loadedImages = [];
     var urlPatterns = ["flickr.com", "nla.gov.au", "artsearch.nga.gov.au", "recordsearch.naa.gov.au", "images.slsa.sa.gov.au"];
     var found = 0;
 	var artic;
 	var searchZone = "newspaper";
 	var count=0;
+	var cardnum=0;
+	var newcard;
 (function($){
 
 	function waitForFlickr() {
@@ -142,10 +145,17 @@ class game{
 		}
 
 	}
-
+	$("form#Confirm").submit(function(event) {
+		  event.preventDefault();
+		if (newcard.keyword!="null"){
+				keywordcards.push(newcard);
+			}
+		 
+	 });
     $("form#searchTrove").submit(function(event) {
         event.preventDefault();
-
+		newcard = new Card("null","null","null","null");
+		//keywordcards.push(new Card("null","null","null","null"));
         loadedImages = [];
 	found = 0;
         //get input values
@@ -231,6 +241,8 @@ function getArticleText(index, item){
 				$("#output").append($(info));
 			}
 			count++;
+			newcard.articleURL=url;
+			newcard.excerpt=excerpt;
 	});
 }
     /*
@@ -292,10 +304,10 @@ function getArticleText(index, item){
     }
 
    function printImages() {
-
-	    var testcard = new Card(searchTerm,loadedImages[0],"null","null");
+		newcard.keyword=$("#searchTerm").val();
+		newcard.imageurl=loadedImages[0];
             var image = new Image();
-            image.src = testcard.imagecard()[1];
+            image.src = newcard.imagecard()[1];
             image.style.display = "inline-block";
             image.style.width = "48%";
             image.style.margin = "1%";
