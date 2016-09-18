@@ -129,6 +129,9 @@ class game{
 	var loadedImages = [];
     var urlPatterns = ["flickr.com", "nla.gov.au", "artsearch.nga.gov.au", "recordsearch.naa.gov.au", "images.slsa.sa.gov.au"];
     var found = 0;
+	var artic;
+	var searchZone = "newspaper";
+	var count=0;
 (function($){
 
 	function waitForFlickr() {
@@ -162,12 +165,74 @@ class game{
             //printImages();
 
 	   waitForFlickr(); // Waits for the flickr images to load
+	   //loads text 
+
         });
+		 var searchTerm = $("#searchTerm").val();
+			   var urlarticle = "http://api.trove.nla.gov.au/result?key=" 
+		        + apiKey + "&encoding=json&zone=" + searchZone 
+		        + "&sortby=dateDesc&q=" + searchTerm + "&callback=?";
+				console.log(urlarticle);
+				    $.getJSON(urlarticle, function(data) {
+		    	// clear the HTML div that will display the results 		        
+		        if (data.response.zone[0].records.article){
+		        	// For each result returned, call getArticleText to retrieve the transcribed text
+		            $.each(data.response.zone[0].records.article, getArticleText);
+		            // Output the search results in JSON format to the console, use developer tools to see how the data is structured.
+		            console.log(data);
+		        }else{
+			        $('#output').append("<p>No search results found for"+searchTerm+"</p>");
+		        }
+				});
+							var urlFirst = "http://api.trove.nla.gov.au/result?key=" 
+		        + apiKey + "&encoding=json&zone=newspaper&q=brisbane&callback=?";
+			$.getJSON(urlFirst, function(data){
+				if(data.response.zone[0].records.article){
+					$('#output').append("<p>Ready...</p>");
+				}				
+			});
     });
 
 
 
-
+function getArticleText(index, item){
+	var apiKey = "d1u5avs2ukffes6g";
+	/*
+	* Construct the search URL
+	* Using the item ID, set the inclusions for the result - using the include parameter
+	*/
+	var articleURL = "http://api.trove.nla.gov.au/newspaper/"
+	+ item.id 
+	+ "?key="+apiKey
+	+ "&include=articletext,pdf&encoding=json&callback=?";
+	// Pull what values you can from the original result - article title & URL
+	var title = item.heading;
+	var url = item.troveUrl;
+	
+	// Perform the search
+	$.getJSON(encodeURI(articleURL), function(data){
+		// Create a div element
+		var info = document.createElement("div");
+		// Give it the Bootstrap class panel
+		$(info).addClass("panel");
+		// Add the article title as a link contained in a div
+		$(info).append("<div class='panel-heading'><a href='"
+			+url+"' alt='Link to Trove Record'>"+title
+			+"</a></div>");
+		// Add the article text returned in the result to a new div and construct the link to the printable PDF document from the article ID.
+		var excerpt= data.article.articleText.substr(0, 2000);
+		$(info).append("<div class='panel-body'>"
+			+excerpt
+			+"<a href='http://trove.nla.gov.au/ndp/del/printArticlePdf/"
+			+data.article.id
+			);
+			//Add the result to the search results element
+			if(count==0){
+				$("#output").append($(info));
+			}
+			count++;
+	});
+}
     /*
      *   Depending where the image comes from, there is a special way to get that image from the website.
      *   This function works out where the image is from, and gets the image URL
