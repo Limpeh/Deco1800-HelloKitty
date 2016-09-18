@@ -49,7 +49,7 @@ class teacher extends User{
 		this.students.push(student);
 	}
 	addstage(stage){
-		this.stages.push(stage):
+		this.stages.push(stage);
 	}
 }
 class CardSet{
@@ -58,9 +58,9 @@ class CardSet{
 		this.cardlist=cardlist;
 	}
 	drawhand(num){
-		int ran;
+		var ran;
 		var hand=[];
-		for (int i=0; i<num; i++){
+		for (i=0; i<num; i++){
 			ran = Math.floor(Math.random() * cardlist.length);
 			hand.push(cardlist[ran]);
 			cardlist.splice(ran,1);
@@ -80,7 +80,7 @@ class game{
 		this.timer=timer;
 	}
 	createcards(){
-		for(int i=0;i<pairs;i++){
+		for(i=0;i<pairs;i++){
 			this.cards.push(this.hand[i].articlecard());
 			this.cards.push(this.hand[i].imageecard());
 		}
@@ -148,8 +148,8 @@ class game{
         //get input values
         var searchTerm = $("#searchTerm").val().trim();
         searchTerm = searchTerm.replace(/ /g, "%20");
-        var sortBy = $("#sortBy").val();
-        var apiKey = "jsk1qqntnrj7qbvf";
+       // var sortBy = $("#sortBy").val();
+        var apiKey = "d1u5avs2ukffes6g";
 
         //create searh query
         var url = "http://api.trove.nla.gov.au/result?key=" + apiKey + "&l-availability=y%2Ff&encoding=json&zone=picture" + "&sortby=relevance&n=100&q=" + searchTerm + "&callback=?";
@@ -226,10 +226,17 @@ class game{
 
     }
 
-    function printImages() {
-		var testcard = new Card(searchTerm,loadedImages[],"null","null");
-		return testcard;
-    }
+   function printImages() {
+
+	    var testcard = new Card(searchTerm,loadedImages[0],"null","null");
+            var image = new Image();
+            image.src = testcard.imagecard()[1];
+            image.style.display = "inline-block";
+            image.style.width = "48%";
+            image.style.margin = "1%";
+            image.style.verticalAlign = "top";
+            $("#output").append(image);
+        }
 
     // from http://css-tricks.com/snippets/javascript/get-url-variables/
     function getQueryVariable(variable, url) {
