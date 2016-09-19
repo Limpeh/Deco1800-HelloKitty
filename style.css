@@ -23,3 +23,101 @@ body {
 	width: 100px;
 }
 /*End of mainstage css */
+
+/* Start of login.css<jowin>*/
+#Banner {
+	text-align: center;
+	font-family:'Baloo Tamma', cursive;
+	color: white;
+	border-style:solid;
+	border-color:black;
+	border-radius: 25px; 
+	background-color: #90D490;
+}
+
+body {
+	background-color: #D4B290;
+}
+
+#sign_in {
+	text-align:center;
+	font-family:'Baloo Tamma', cursive;
+	font-size:1.5em;
+	padding:0;
+	margin-bottom: 0;
+	border-style: none;
+}
+
+.login {
+	height: 30px;
+	width: 150px;
+}
+
+p {
+	margin:0;
+	padding:0;
+}
+
+#Banner p {
+	padding:0;
+	margin:0;
+}
+
+#footer{
+	border-style:solid;
+	border-color:black; 
+	border-radius:25px;
+	bottom:0;
+	position:fixed;
+	width: 98%;
+	height: 30px;
+}
+
+#footer ul{
+	list-style-type:none;
+}
+
+#footer ul li{
+	display: inline;
+}
+
+#pop_background{
+	position: fixed;
+	width: 100%;
+	height: 900px;
+	top: 0;
+	left: 0;
+	background: #000;
+	opacity: .8;
+	z-index:1000;
+	cursor: pointer;
+	display: none;
+}
+
+#pop_box{
+	position: absolute;
+	background: #fff;
+	width: 30%;
+	margin: 100px 0 0 35%;
+	padding: 20px;
+	z-index: 1500;
+	display: none;
+	text-align: center;
+}
+
+#pop_box a{
+	text-decoration: none;
+}
+
+#pop_box ul{
+	list-style-type: none;
+}
+
+#pop_box ul li{
+	display: inline;
+	padding: 5px;
+	border-style: solid;
+	border-color: black;
+	margin: 32px;
+}
+/* End of login.css<jowin>*/
