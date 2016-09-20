@@ -1,5 +1,10 @@
+* {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
 body {
-	background-color: white;
+	background-color: #F4F4F4;
 }
 
 /* Start of mainstage css*/
@@ -27,18 +32,14 @@ body {
 /* Start of login.css<jowin>*/
 #Banner {
 	text-align: center;
-	font-family:'Baloo Tamma', cursive;
+	font-family:'Baloo Tamma', cursive; 
 	color: white;
-	border-style:solid;
-	border-color:black;
-	border-radius: 25px; 
-	background-color: #90D490;
+	border-bottom: 1px solid black; 
+	background-color: #DEC26E;
+	margin-bottom: 3em;
+	height: 5em;
+	padding-top: 1em;
 }
-
-body {
-	background-color: #D4B290;
-}
-
 #sign_in {
 	text-align:center;
 	font-family:'Baloo Tamma', cursive;
@@ -119,5 +120,18 @@ p {
 	border-style: solid;
 	border-color: black;
 	margin: 32px;
+}
+#outputImg, #outputArt {
+	background-color: #DBC695;
+	width: 15em;
+	height: 20em;
+	float: left;
+	display: inline;
+	margin: 3em;
+	padding: 1em;
+	border-radius: 1.5em;
+}
+form {
+	margin: 1em 3em 1em;
 }
 /* End of login.css<jowin>*/

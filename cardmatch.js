@@ -158,6 +158,7 @@ class game{
 		//keywordcards.push(new Card("null","null","null","null"));
         loadedImages = [];
 	found = 0;
+		count=0;
         //get input values
         var searchTerm = $("#searchTerm").val().trim();
         searchTerm = searchTerm.replace(/ /g, "%20");
@@ -198,7 +199,7 @@ class game{
 		        + apiKey + "&encoding=json&zone=newspaper&q=brisbane&callback=?";
 			$.getJSON(urlFirst, function(data){
 				if(data.response.zone[0].records.article){
-					$('#output').append("<p>Ready...</p>");
+					$('#outputArt').append("<p>Searching for article...</p>");
 				}				
 			});
     });
@@ -226,11 +227,11 @@ function getArticleText(index, item){
 		// Give it the Bootstrap class panel
 		$(info).addClass("panel");
 		// Add the article title as a link contained in a div
-		$(info).append("<div class='panel-heading'><a href='"
-			+url+"' alt='Link to Trove Record'>"+title
-			+"</a></div>");
+		//$(info).append("<div class='panel-heading'><a href='"
+			//+url+"' alt='Link to Trove Record'>"+title
+			//+"</a></div>");
 		// Add the article text returned in the result to a new div and construct the link to the printable PDF document from the article ID.
-		var excerpt= data.article.articleText.substr(0, 2000);
+		var excerpt= data.article.articleText.substr(0, 600);
 		$(info).append("<div class='panel-body'>"
 			+excerpt
 			+"<a href='http://trove.nla.gov.au/ndp/del/printArticlePdf/"
@@ -238,7 +239,7 @@ function getArticleText(index, item){
 			);
 			//Add the result to the search results element
 			if(count==0){
-				$("#output").append($(info));
+				$("#outputArt").append($(info));
 			}
 			count++;
 			newcard.articleURL=url;
@@ -309,10 +310,10 @@ function getArticleText(index, item){
             var image = new Image();
             image.src = newcard.imagecard()[1];
             image.style.display = "inline-block";
-            image.style.width = "48%";
+            image.style.width = "90%";
             image.style.margin = "1%";
             image.style.verticalAlign = "top";
-            $("#output").append(image);
+            $("#outputImg").append(image);
         }
 
     // from http://css-tricks.com/snippets/javascript/get-url-variables/

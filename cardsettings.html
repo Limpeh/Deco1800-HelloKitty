@@ -7,7 +7,8 @@
      <script src="http://code.jquery.com/jquery-1.12.3.js" type="text/javascript"></script>
 	</head>
 	<body>
-		<h1>Stage Settings</h1>
+		
+		<div id="banner"><h1>Stage Settings</h1></div>
 		<form action ="#" id="confirm">
 			<select name= "cardno">
 				<option value="6">6</option>
@@ -25,9 +26,12 @@
 				<input id="searchTerm" type="text">
 				<button type="submit" id="searchbtn">Search</button>
 			</form>
-
-		<div id="output">
+		<div class="wrap">
+			<div id="outputImg">
+			</div>
+			<div id="outputArt">
+			</div>
+			<script src="cardmatch.js" type="text/javascript"></script> 
 		</div>
-		<script src="cardmatch.js" type="text/javascript"></script> 
 	</body>
 </html>
