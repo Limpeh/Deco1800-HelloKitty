@@ -22,6 +22,14 @@ class Card{
 		}else{this.check=1}
 	}
 }
+$(document).ready(function(){
+	$("#outputArt").click(function() {
+		$("#outputArt").css("background-color", "blue");
+	});
+	$("#outputImg").click(function() {
+		$("#outputImg").css("background-color", "blue");
+	});
+});
 class User{
 	constructor(username,upassword){
 		this.username = username;
@@ -240,7 +248,7 @@ function getArticleText(index, item){
 			//+url+"' alt='Link to Trove Record'>"+title
 			//+"</a></div>");
 		// Add the article text returned in the result to a new div and construct the link to the printable PDF document from the article ID.
-		var excerpt= data.article.articleText.substr(0, 600);
+		var excerpt= data.article.articleText.substr(0, 400);
 		$(info).append("<div class='panel-body'>"
 			+excerpt
 			+"<a href='http://trove.nla.gov.au/ndp/del/printArticlePdf/"

@@ -150,8 +150,8 @@ p {
 	background-color: #DBC695;
 	width: 15em;
 	height: 20em;
-	float: left;
 	display: inline;
+	float: left;
 	margin: 3em;
 	padding: 1em;
 	border-radius: 1.5em;
@@ -177,7 +177,11 @@ form {
 }
 .wrap {
 	margin: auto;
-	width: 55%;
+	width: 70%;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+	column-width: 10em;
 }
 
 label > input{
