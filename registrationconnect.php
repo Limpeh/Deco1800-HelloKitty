@@ -1,8 +1,8 @@
 <?php
 
 define ('DB_NAME','CardMatch');
-define ('DB_USER','s4396765')
-define ('DB_PASSWORD','sakaesushi1630')
+define ('DB_USER','s4396765');
+define ('DB_PASSWORD','sakaesushi1630');
 define ('DB_HOST','localhost');
 
 $link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
@@ -14,11 +14,11 @@ if (!$link) {
 $db_selected = mysql_select_db(DB_NAME, $link);
 
 if (!$db_selected) {
-	die ('Can\'t use ' . DB_NAME . ':' . mysql_error()
+	die ('Can\'t use ' . DB_NAME . ':' . mysql_error());
 }
 
-$username = $_POST['username']
-$password = $_POST['password']
+$username = $_POST['username'];
+$password = $_POST['password'];
 
 $sql = "INSERT INTO TEACHER (username,password) VALUES ('$username', '$password')";
 
