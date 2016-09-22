@@ -135,11 +135,12 @@ class game{
 	var count=0;
 	var cardnum=0;
 	var newcard;
+	var num=5;
 (function($){
 
 	function waitForFlickr() {
 		if(found == loadedImages.length) {
-			printImages();
+			printMultiImages(num);
 		} else {
 			setTimeout(waitForFlickr, 250);
 		}
@@ -238,8 +239,9 @@ function getArticleText(index, item){
 			+data.article.id
 			);
 			//Add the result to the search results element
-			if(count==0){
-				$("#outputArt").append($(info));
+			if (count<num){
+				$(".wrap").append("<div class = 'A"+count+"'id='outputArt'></div>");
+				$(".A"+count).append($(info));
 			}
 			count++;
 			newcard.articleURL=url;
@@ -303,6 +305,22 @@ function getArticleText(index, item){
         });
 
     }
+  function printMultiImages(num) {
+		//newcard.keyword=$("#searchTerm").val();
+		//newcard.imageurl=loadedImages[0];
+            
+			for (i=0;i<num;i++){
+				var x=1;
+				var image = new Image();
+				image.src = loadedImages[i];
+				image.style.display = "inline-block";
+				image.style.width = "90%";
+				image.style.margin = "1%";
+				image.style.verticalAlign = "top";
+				$(".wrap").append("<div class = '"+i+"'id='outputImg'></div>");
+				$("."+i).append(image);
+			}
+        }
 
    function printImages() {
 		newcard.keyword=$("#searchTerm").val();
