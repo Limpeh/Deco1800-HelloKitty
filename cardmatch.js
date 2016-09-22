@@ -240,7 +240,8 @@ function getArticleText(index, item){
 			);
 			//Add the result to the search results element
 			if (count<num){
-				$(".wrap").append("<div class = 'A"+count+"'id='outputArt'></div>");
+				$("#Articles").append(" <label><input type='radio' name='cardart' value='"+i+"'><<div class = 'A"+count+"'id='outputArt'></div><label/>");
+				//$(".wrap").append("<div class = 'A"+count+"'id='outputArt'></div>");
 				$(".A"+count).append($(info));
 			}
 			count++;
@@ -317,7 +318,7 @@ function getArticleText(index, item){
 				image.style.width = "90%";
 				image.style.margin = "1%";
 				image.style.verticalAlign = "top";
-				$(".wrap").append("<div class = '"+i+"'id='outputImg'></div>");
+				$("#Images").append(" <label><input type='radio' name='cardimage' value='"+i+"'><div class = '"+i+"'id='outputImg'></div><label/>");
 				$("."+i).append(image);
 			}
         }

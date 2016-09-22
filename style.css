@@ -179,4 +179,17 @@ form {
 	margin: auto;
 	width: 55%;
 }
-/* End of stage settings */
+
+label > input{
+  visibility: hidden;
+  position: absolute;
+  	float: left;
+	display: inline;
+}
+label > input + div{
+  cursor:pointer;
+  border:transparent 2px solid;
+}
+label > input:checked + div{ 
+  border:2px solid blue;
+}
