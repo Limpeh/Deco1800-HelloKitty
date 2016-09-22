@@ -1,11 +1,66 @@
+/* general css, Jowin and Kurt */
 * {
 	border: 0;
 	margin: 0;
 	padding: 0;
+	font-family:'Baloo Tamma', cursive;
 }
+
 body {
 	background-color: #F4F4F4;
 }
+
+h1 {
+	font-size: 3em;
+	height: 1.2em;
+}
+
+h2 {
+	font-size: 2.2em;
+}
+
+h3 {
+	height: 0;
+}
+
+#banner {
+	text-align: center;
+	font-family:'Baloo Tamma', cursive; 
+	color: white;
+	border-bottom: 1px solid black; 
+	background-color: #DEC26E;
+	margin-bottom: 1.8em;
+	height: 7em;
+	padding-top: 1em;
+}
+
+#footer{
+	border-top: 1px solid black;
+	padding: 0;
+	bottom: 0;
+	margin-top: 1.5em;
+	background-color: #DEC26E;
+	position:fixed;
+	width: 100%;
+	height: 2em;
+}
+
+#footer ul{
+	list-style-type:none;
+	margin-left: 1em;
+	margin-top: 0.5em;
+}
+
+#footer ul li{
+	display: inline;
+}
+
+li a {
+	color: #000000;
+	text-decoration: none;
+}
+
+/* End of general css */
 
 /* Start of mainstage css*/
 #container {
@@ -29,17 +84,7 @@ body {
 }
 /*End of mainstage css */
 
-/* Start of login.css<jowin>*/
-#Banner {
-	text-align: center;
-	font-family:'Baloo Tamma', cursive; 
-	color: white;
-	border-bottom: 1px solid black; 
-	background-color: #DEC26E;
-	margin-bottom: 3em;
-	height: 5em;
-	padding-top: 1em;
-}
+/* Start of login.css <jowin> */
 #sign_in {
 	text-align:center;
 	font-family:'Baloo Tamma', cursive;
@@ -58,30 +103,6 @@ p {
 	margin:0;
 	padding:0;
 }
-
-#Banner p {
-	padding:0;
-	margin:0;
-}
-
-#footer{
-	border-style:solid;
-	border-color:black; 
-	border-radius:25px;
-	bottom:0;
-	position:fixed;
-	width: 98%;
-	height: 30px;
-}
-
-#footer ul{
-	list-style-type:none;
-}
-
-#footer ul li{
-	display: inline;
-}
-
 #pop_background{
 	position: fixed;
 	width: 100%;
@@ -121,6 +142,10 @@ p {
 	border-color: black;
 	margin: 32px;
 }
+
+/* End of login.css <jowin> */
+/* Start of stage settings Kurt */
+
 #outputImg, #outputArt {
 	background-color: #DBC695;
 	width: 15em;
@@ -134,4 +159,37 @@ p {
 form {
 	margin: 1em 3em 1em;
 }
-/* End of login.css<jowin>*/
+#settings {
+	text-align: center;
+}
+#settings select {
+	margin-right: 0.8em;
+	padding: 0.2em 1em 0;
+}
+#settings input {
+	margin-right: 0.8em;
+}
+.settingsButton {
+	padding: 0.6em 2em 0.4em;
+	border: 1px solid black;
+	border-radius: 0.5em;
+	font-size: 1em;
+}
+.wrap {
+	margin: auto;
+	width: 55%;
+}
+
+label > input{
+  visibility: hidden;
+  position: absolute;
+  	float: left;
+	display: inline;
+}
+label > input + div{
+  cursor:pointer;
+  border:transparent 2px solid;
+}
+label > input:checked + div{ 
+  border:2px solid blue;
+}

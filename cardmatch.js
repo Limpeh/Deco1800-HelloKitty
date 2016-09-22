@@ -126,8 +126,9 @@ class game{
 ///////////////////////////////////////////////////////////////////////
 /****//****//****//****//****//****//****//****//****//****//****//***/
 	var keywordcards=[];
-	
+	var loadedArt = [];
 	var loadedImages = [];
+	var loadedEx = [];
     var urlPatterns = ["flickr.com", "nla.gov.au", "artsearch.nga.gov.au", "recordsearch.naa.gov.au", "images.slsa.sa.gov.au"];
     var found = 0;
 	var artic;
@@ -135,11 +136,12 @@ class game{
 	var count=0;
 	var cardnum=0;
 	var newcard;
+	var num=5;
 (function($){
 
 	function waitForFlickr() {
 		if(found == loadedImages.length) {
-			printImages();
+			printMultiImages(num);
 		} else {
 			setTimeout(waitForFlickr, 250);
 		}
@@ -147,6 +149,12 @@ class game{
 	}
 	$("form#Confirm").submit(function(event) {
 		  event.preventDefault();
+		 var i = $("input[name='cardimage']:checked").val();
+		 newcard.imageurl= loadedImages[i];
+		i = $("input[name='cardart']:checked").val();
+		newcard.excerpt=loadedEx[i];
+		newcard.articleurl = loadedArt[i];
+		console.log(loadedEx[i]);
 		if (newcard.keyword!="null"){
 				keywordcards.push(newcard);
 			}
@@ -180,6 +188,7 @@ class game{
 
         });
 		 var searchTerm = $("#searchTerm").val();
+		 newcard.keyword=$("#searchTerm").val();
 			   var urlarticle = "http://api.trove.nla.gov.au/result?key=" 
 		        + apiKey + "&encoding=json&zone=" + searchZone 
 		        + "&sortby=dateDesc&q=" + searchTerm + "&callback=?";
@@ -219,7 +228,7 @@ function getArticleText(index, item){
 	// Pull what values you can from the original result - article title & URL
 	var title = item.heading;
 	var url = item.troveUrl;
-	
+	loadedArt.push(articleURL);
 	// Perform the search
 	$.getJSON(encodeURI(articleURL), function(data){
 		// Create a div element
@@ -238,9 +247,12 @@ function getArticleText(index, item){
 			+data.article.id
 			);
 			//Add the result to the search results element
-			if(count==0){
-				$("#outputArt").append($(info));
+			if (count<num){
+				$("#Articles").append(" <label><input type='radio' name='cardart' value='"+count+"'><div class = 'A"+count+"'id='outputArt'></div><label/>");
+				//$(".wrap").append("<div class = 'A"+count+"'id='outputArt'></div>");
+				$(".A"+count).append($(info));
 			}
+			loadedEx.push($(info));
 			count++;
 			newcard.articleURL=url;
 			newcard.excerpt=excerpt;
@@ -303,6 +315,22 @@ function getArticleText(index, item){
         });
 
     }
+  function printMultiImages(num) {
+		//newcard.keyword=$("#searchTerm").val();
+		//newcard.imageurl=loadedImages[0];
+            
+			for (i=0;i<num;i++){
+				var x=1;
+				var image = new Image();
+				image.src = loadedImages[i];
+				image.style.display = "inline-block";
+				image.style.width = "90%";
+				image.style.margin = "1%";
+				image.style.verticalAlign = "top";
+				$("#Images").append(" <label><input type='radio' name='cardimage' value='"+i+"'><div class = '"+i+"'id='outputImg'></div><label/>");
+				$("."+i).append(image);
+			}
+        }
 
    function printImages() {
 		newcard.keyword=$("#searchTerm").val();
