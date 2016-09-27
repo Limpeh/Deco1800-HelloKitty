@@ -364,6 +364,23 @@ function getArticleText(index, item){
         }
         return (false);
     }
+	
+	function printCardList(list){
+		cards = list.cardlist;
+		for (i=0;i<cards.length;i++){
+			var x=1;
+			var image = new Image();
+			image.src = cards[i].imgurl;
+			image.style.display = "inline-block";
+			image.style.width = "90%";
+			image.style.margin = "1%";
+			image.style.verticalAlign = "top";
+			$("#Images").append(" <label><input type='radio' name='cardimage' value='"+i+"'><div class = '"+i+"'id='outputImg'></div><label/>");
+			$("."+i).append(image);
+			$("#Articles").append(" <label><input type='radio' name='cardart' value='"+i+"'><div class = 'A"+i+"'id='outputArt'></div><label/>");
+			$(".A"+count).append(cards[i].excerpt);
+		}
+	}
     
     }(jQuery));
 
