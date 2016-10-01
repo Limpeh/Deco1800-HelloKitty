@@ -34,6 +34,11 @@ h3 {
 	padding-top: 1em;
 }
 
+#banner a{
+	text-decoration: none;
+	color: white;
+}
+
 #footer{
 	border-top: 1px solid black;
 	padding: 0;
@@ -196,4 +201,42 @@ label > input + div{
 }
 label > input:checked + div{ 
   border:2px solid blue;
+}
+
+#student_main{
+	text-align:center;
+	font-family:'Baloo Tamma', cursive;
+	font-size:1.5em;
+	padding:0;
+	margin-bottom: 0;
+	border-style: none;
+}
+
+	
+#student_main li{
+	border-radius: 25px;
+    background: #DEC26E; 
+    border: 2px solid black;
+    margin: 20px;
+    list-style-type: none;
+    text-align:center;
+    
+}
+
+#teacher_main{
+	text-align:center;
+	font-family:'Baloo Tamma', cursive;
+	font-size:1.5em;
+	padding:0;
+	margin-bottom: 0;
+	border-style: none;
+}
+
+#teacher_main li{
+	border-radius: 25px;
+    background: #DEC26E; 
+    border: 2px solid black;
+    margin: 20px;
+    list-style-type: none;
+    text-align:center;
 }
