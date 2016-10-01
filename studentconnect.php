@@ -1,8 +1,10 @@
 <?php
 
-define ('DB_NAME','CardMatch');
-define ('DB_USER','s4396765');
-define ('DB_PASSWORD','sakaesushi1630');
+include 'dbhconnect.php';
+
+/* define ('DB_NAME','CardMatch');
+define ('DB_USER','root');
+define ('DB_PASSWORD','');
 define ('DB_HOST','localhost');
 
 $link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
@@ -15,16 +17,20 @@ $db_selected = mysql_select_db(DB_NAME, $link);
 
 if (!$db_selected) {
 	die ('Can\'t use ' . DB_NAME . ':' . mysql_error());
-}
+} */
 
 $username = $_POST['username'];
 $password = $_POST['password'];
+$teacherid = $_POST['teacher_id'];
 
-$sql = "INSERT INTO TEACHER (username,password) VALUES ('$username', '$password')";
+$sql = "INSERT INTO STUDENT (username,password) VALUES ('$username', '$password', '$teacher_id')";
+$result = mysqli_query($conn, $sql);
 
-if (!mysql_query($sql)) {
+header("Location: index.php");
+
+/* if (!mysql_query($sql)) {
 	die("Error:" . mysql_error());
 }
 
 mysql_close();
-?>
+?> */

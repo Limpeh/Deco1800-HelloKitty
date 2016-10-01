@@ -14,8 +14,8 @@
 <body>
 
 <h2>Sign Up</h2>
-<form action ="registrationconnect.php" method ="post">
-	<div id="Student">
+<form action ="teacherconnect.php" method ="post">
+	<div id="Teacher">
 		<p><label for="username">Username</label></p>
 		<p><input type="text" id="username" name="username" placeholder="Username"/></p>
 
