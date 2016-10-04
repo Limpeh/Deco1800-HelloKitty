@@ -23,8 +23,8 @@
 		</ul>
 	</div>
 	<div id="sign_in">
-		<p><h2>Student Login</h2></p>
-		<form id="login" action="loginconnect.php" method="POST">
+		<p><h2>Teacher Login</h2></p>
+		<form id="login" action="teacherloginconnect.php" method="POST">
 		
 		<p><label for="username">Username</label></p>
 		<p><input type="text" id="username" name="logindets" placeholder="Username" class="login" /></p>
@@ -37,7 +37,7 @@
 	
 		<p>New to Cardmatch? Click here to sign up!</p>
 		<p><input id="signup" type="submit" value="Sign Up"></p>
-		<a href="teacherlogin.php">Teacher Login</a>
+		<a href="index.php">Student Login</a>
 	</div>
 
 	<script>
@@ -71,5 +71,3 @@
 
 </body>
 </html>
-
-

@@ -1,4 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -27,8 +28,8 @@
 	</div>
 			
 	<p><input type="submit" value="Sign Up"></p>
-	<p><a href="login.html">Back</a></p>
 </form>
+	<p><a href="index.php">Back</a></p>
 
 	
 

@@ -14,7 +14,7 @@
 <body>
 
 <h2>Sign Up</h2>
-<form action ="teacherconnect.php" method ="post">
+<form action = "teacherconnect.php" method ="post">
 	<div id="Teacher">
 		<p><label for="username">Username</label></p>
 		<p><input type="text" id="username" name="username" placeholder="Username"/></p>
@@ -26,7 +26,7 @@
 			
 	<p><input type="submit" value="submit"></p>
 </form>
-	<p><a href="login.html">Back</a></p>
+	<p><a href="index.php">Back</a></p>
 
 <footer>
 </footer>

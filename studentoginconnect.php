@@ -6,7 +6,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 $sql = "SELECT * 
-FROM Student, Teacher
+FROM Student
 WHERE username ='$username' AND password = '$password'";
 $result = mysqli_query($conn, $sql);
 
@@ -17,6 +17,6 @@ else {
 	$_SESSION['id'] = $row['id'];
 }
 
-header("Location:")
+header("Location:student_main.html")
 
 ?>
