@@ -20,7 +20,7 @@
 		<p><input type="text" id="username" name="username" placeholder="Username"/></p>
 
 		<p><label for="password">Password</label></p>
-		<p><input type="text" id="password" name="password" placeholder="Password"/></p>
+		<p><input type="password" id="password" name="password" placeholder="Password"/></p>
 
 	</div>
 			

@@ -27,7 +27,7 @@ $sql = "INSERT INTO STUDENT (username,password) VALUES ('$username', '$password'
 $result = mysqli_query($conn, $sql);
 
 header("Location: index.php");
-
+?>
 /* if (!mysql_query($sql)) {
 	die("Error:" . mysql_error());
 }

@@ -24,11 +24,11 @@ if (!$db_selected) {
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$sql = "INSERT INTO TEACHER (username,password) VALUES ('$username', '$password')";
+$sql = "INSERT INTO Teacher (username,password) VALUES ('$username', '$password')";
 $result = mysqli_query($conn, $sql);
 
 header("Location: index.php");
-
+   
 
 /* if (!mysql_query($sql)) {
 	die("Error:" . mysql_error());
