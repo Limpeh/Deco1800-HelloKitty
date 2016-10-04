@@ -166,7 +166,16 @@ class game{
 		if (newcard.keyword!="null"){
 				keywordcards.push(newcard);
 			}
-		 
+		var image = new Image();
+        image.src = newcard.imageurl;
+            image.style.display = "inline-block";
+            image.style.width = "10%";
+            image.style.margin = "1%";
+            image.style.verticalAlign = "top";
+			$("#show").append(image);
+			$("#Images").empty();
+			$("#Articles").empty();
+			console.log(keywordcards);
 	 });
     $("form#searchTrove").submit(function(event) {
         event.preventDefault();
