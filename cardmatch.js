@@ -176,6 +176,11 @@ class game{
 			$("#Images").empty();
 			$("#Articles").empty();
 			console.log(keywordcards);
+			
+			$.ajax({url:"cardpost.php",
+			type: "POST",
+			data: {keyword: newcard.keyword, teacherID: 1, imagea:newcard.imageurl, texta: newcard.excerpt, textlink: newcard.articleurl}
+			});
 	 });
     $("form#searchTrove").submit(function(event) {
         event.preventDefault();
