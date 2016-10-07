@@ -175,11 +175,26 @@ class game{
 			$("#show").append(image);
 			$("#Images").empty();
 			$("#Articles").empty();
-			console.log(keywordcards);
+			console.log(newcard.keyword);
 			
-			$.ajax({url:"cardpost.php",
-			type: "POST",
-			data: {keyword: newcard.keyword, teacherID: 1, imagea:newcard.imageurl, texta: newcard.excerpt, textlink: newcard.articleurl}
+			/*
+			$.ajax({
+				url:"cardpost.php",
+				type: "POST",
+				//processData: false,
+				data: {keyword: newcard.keyword, teacherID: 1, imagea:newcard.imageurl, texta: newcard.excerpt, textlink: newcard.articleurl},
+				success: function(data) {
+					console.log(data);
+				},
+				error: function() {
+					console.log("an error occured");
+				}
+			});*/
+			
+			$.post("cardpost.php", 
+			{keyword: newcard.keyword, teacherID: 1, imagea:newcard.imageurl, texta: newcard.excerpt, textlink: newcard.articleurl},
+			function(data){
+				console.log("success");
 			});
 	 });
     $("form#searchTrove").submit(function(event) {
