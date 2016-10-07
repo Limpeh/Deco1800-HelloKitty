@@ -1,4 +1,4 @@
-/* general css, Jowin and Kurt */
+/* general */
 * {
 	border: 0;
 	margin: 0;
@@ -21,6 +21,15 @@ h2 {
 
 h3 {
 	height: 0;
+}
+
+.button {
+	padding: 0.6em 2em 0.4em;
+	border: 1px solid black;
+	border-radius: 0.5em;
+	font-size: 1em;
+	color: black;
+	text-decoration: none;
 }
 
 #banner {
@@ -65,10 +74,15 @@ li a {
 	text-decoration: none;
 }
 
-/* End of general css */
+/* End of general */
 
-/* Start of mainstage css*/
+/* Start of mainstage */
+#game h2 {
+	margin: 1em;
+	text-align: center;
+}
 #container {
+	margin-left: 2em;
 	float:left;
 	position: relative;
 }
@@ -79,6 +93,7 @@ li a {
 	height:300px;
 	width:200px;
 	border: solid black;
+	margin: 0em 2em 0em 0em;
 }
 
 #clockpic {
@@ -87,9 +102,29 @@ li a {
 	height: 100px;
 	width: 100px;
 }
-/*End of mainstage css */
+#timer {
+	float: right;
+	margin-right: 5em;
+	text-align: center;
+}
+#timer h2 {
+	margin: 0;
+}
+/*End of mainstage */
 
-/* Start of login.css <jowin> */
+/*Start of gameover */
+
+#gameover {
+	text-align: center;
+}
+
+#gameover h2 {
+	margin-bottom: 3em;
+}
+
+/*End of gameover */
+
+/* Start of login */
 #sign_in {
 	text-align:center;
 	font-family:'Baloo Tamma', cursive;
@@ -148,8 +183,8 @@ p {
 	margin: 32px;
 }
 
-/* End of login.css <jowin> */
-/* Start of stage settings Kurt */
+/* End of login */
+/* Start of stage settings */
 
 #outputImg, #outputArt {
 	background-color: #DBC695;

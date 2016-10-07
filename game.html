@@ -1,6 +1,6 @@
 <DOCTYPE! html>
 <html>
-	<meta http-equiv="refresh" content="1;gameover.html" />
+	<meta http-equiv="refresh" content="60;gameover.html" />
 	<head>
 		<meta charset = "UTF-8">
 		<title>CardMatch</title>
@@ -36,7 +36,7 @@
 			count -=1;
 			if(count == 0){
 				clearInterval(counter);
-			
+				window.location='gameover.html'
 			}
 			
 			document.getElementById('clock').innerHTML = count;
