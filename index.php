@@ -24,7 +24,7 @@
 	</div>
 	<div id="sign_in">
 		<p><h2>Student Login</h2></p>
-		<form id="login" action="loginconnect.php" method="POST">
+		<form id="login" action="studentloginconnect.php" method="POST">
 		
 		<p><label for="username">Username</label></p>
 		<p><input type="text" id="username" name="logindets" placeholder="Username" class="login" /></p>
