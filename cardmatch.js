@@ -162,7 +162,6 @@ class game{
 		i = $("input[name='cardart']:checked").val();
 		newcard.excerpt=loadedEx[i];
 		newcard.articleurl = loadedArt[i];
-		console.log(loadedEx[i]);
 		if (newcard.keyword!="null"){
 				keywordcards.push(newcard);
 			}
@@ -175,7 +174,7 @@ class game{
 			$("#show").append(image);
 			$("#Images").empty();
 			$("#Articles").empty();
-			console.log(newcard.keyword);
+			console.log(newcard.excerpt);
 			
 			/*
 			$.ajax({
@@ -289,7 +288,7 @@ function getArticleText(index, item){
 				//$(".wrap").append("<div class = 'A"+count+"'id='outputArt'></div>");
 				$(".A"+count).append($(info));
 			}
-			loadedEx.push($(info));
+			loadedEx.push(excerpt);
 			count++;
 			newcard.articleURL=url;
 			newcard.excerpt=excerpt;
