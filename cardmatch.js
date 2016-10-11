@@ -130,6 +130,8 @@ class game{
 	}
 }
 
+
+
 /****//****//****//****//****//****//****//****//****//****//****//***/
 ///////////////////////////////////////////////////////////////////////
 /****//****//****//****//****//****//****//****//****//****//****//***/
@@ -144,8 +146,32 @@ class game{
 	var count=0;
 	var cardnum=0;
 	var newcard;
+	var loadCard;
+	var setcards = [];
 	var num=5;
+	var json;
 (function($){
+	
+	function getCard(teachID){
+			$.ajax({
+				url:"cardget.php",
+				type: "POST",
+				datatype: "JSON",
+				data: {teacherID: teachID},
+				success: function(data) {
+					json = JSON.parse(data);
+					for (var i=0; i<json.length; i++){
+							loadCard = new Card(json[i][0],json[i][2],json[i][4],json[i][3]);
+							console.log(loadCard);
+							setcards.push(loadCard);
+					}
+				},
+				error: function() {
+					console.log("an error occured");
+				}
+			});
+	}
+	
 
 	function waitForFlickr() {
 		if(found == loadedImages.length) {
@@ -155,6 +181,10 @@ class game{
 		}
 
 	}
+	$("form#Test").submit(function(event) {
+		getCard(1);
+	});
+	
 	$("form#Confirm").submit(function(event) {
 		  event.preventDefault();
 		 var i = $("input[name='cardimage']:checked").val();
@@ -174,22 +204,7 @@ class game{
 			$("#show").append(image);
 			$("#Images").empty();
 			$("#Articles").empty();
-			console.log(newcard.excerpt);
-			
-			/*
-			$.ajax({
-				url:"cardpost.php",
-				type: "POST",
-				//processData: false,
-				data: {keyword: newcard.keyword, teacherID: 1, imagea:newcard.imageurl, texta: newcard.excerpt, textlink: newcard.articleurl},
-				success: function(data) {
-					console.log(data);
-				},
-				error: function() {
-					console.log("an error occured");
-				}
-			});*/
-			
+
 			$.post("cardpost.php", 
 			{keyword: newcard.keyword, teacherID: 1, imagea:newcard.imageurl, texta: newcard.excerpt, textlink: newcard.articleurl},
 			function(data){
@@ -215,7 +230,7 @@ class game{
         //get the JSON information we need to display the images
         $.getJSON(url, function(data) {
             $('#output').empty();
-            console.log(data);
+           // console.log(data);
             $.each(data.response.zone[0].records.work, processImages);
             //printImages();
 
@@ -235,7 +250,6 @@ class game{
 		        	// For each result returned, call getArticleText to retrieve the transcribed text
 		            $.each(data.response.zone[0].records.article, getArticleText);
 		            // Output the search results in JSON format to the console, use developer tools to see how the data is structured.
-		            console.log(data);
 		        }else{
 			        $('#output').append("<p>No search results found for"+searchTerm+"</p>");
 		        }
