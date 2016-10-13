@@ -1,8 +1,3 @@
-<?php
-
-	session_start();
-?>
-
 <!doctype html>
 <html>
 <head>
@@ -13,29 +8,23 @@
 </head>
 
 <body>
-
-<?php
-	if (isset($_SESSION['id'])){
-		echo $_SESSION['id'];
-	} else {
-		echo "You are not logged in!";
-	}
-?>
-	
 <div id="wrapper">
 	<div id="banner">
 		<a href="login.html"><h1>CARDMATCH</h1></a>
 		<p><h3>The Learning Game</h3></p>
 	</div>
 	
-	<div id="student_main">
+	
+	<h3>Student Instructions</h3>
+	
 		<ul>
-			<li><a href="about.html">Play</a></li>
-			<li><a href="favourites.html">Favorites</a></li>
-			<li><a href="student_instructions.html">Instructions</a></li>
+			<li>Select 2 cards</li>
+			<li>Ensure that the text matches the image</li>
+			<li>Add the cards that interest you to your list of favourites!</li>
 		</ul>
-		<a href="login.html">Exit</a> 
-	</div>
+	
+	
+	
 
 	
 	<div id="footer">
