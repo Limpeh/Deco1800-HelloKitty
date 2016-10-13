@@ -7,11 +7,11 @@ $password = $_POST['password'];
 
 $sql = "SELECT * 
 FROM Teacher
-WHERE Username =$username AND Password = $password";
+WHERE Username = '$username' AND Password = '$password'";
 $result = mysqli_query($conn, $sql);
 
 if (empty($result)){
-	echo "Incorrect username or password";
+	echo $result;
 }
 else {
 	$array = [];
