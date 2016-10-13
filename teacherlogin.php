@@ -24,7 +24,7 @@
 	</div>
 	<div id="sign_in">
 		<p><h2>Teacher Login</h2></p>
-		<form id="login" action="teacherloginconnect.php" method="POST">
+		<form id="login" action=#>
 		
 		<p><label for="username">Username</label></p>
 		<p><input type="text" id="username" name="logindets" placeholder="Username" class="login" /></p>
@@ -41,7 +41,9 @@
 	</div>
 
 	<script>
-
+	var json;
+	var pass;
+	var user;
 	$(document).ready(function(){
 
 		$('#signup').click(function(){
@@ -55,6 +57,30 @@
 			$('#pop_background').fadeOut();
 			$('#pop_box').fadeOut();
 		});
+		
+		function login(user, pass){
+			console.log(user);
+			console.log(pass);
+			$.ajax({
+					url:"teacherloginconnect.php",
+					type: "POST",
+					datatype: "JSON",
+					data: {username: user, password: pass},
+					success: function(data) {
+						console.log(data);
+						json = JSON.parse(data);
+						if (json.length>0){
+							console.log("it works");
+						}
+					},
+					error: function() {
+						console.log("an error occured");
+					}
+				});
+		}
+		$("form#login").submit(function(event) {
+			login($("#username").val(), $("#password").val());
+		})
 	
 	});
 

@@ -7,16 +7,21 @@ $password = $_POST['password'];
 
 $sql = "SELECT * 
 FROM Teacher
-WHERE username ='$username' AND password = '$password'";
+WHERE Username =$username AND Password = $password";
 $result = mysqli_query($conn, $sql);
 
-if (!$row = mysqli_fetch_assoc($result)){
+if (empty($result)){
 	echo "Incorrect username or password";
 }
 else {
+	$array = [];
+while( $row = mysqli_fetch_row($result)){
+		array_push( $array, $row );
+	}
 	$_SESSION['id'] = $row['id'];
+	echo json_encode( $array );
 }
 
-header("Location:teacher_main.html")
+//header("Location:teacher_main.html")
 
 ?>

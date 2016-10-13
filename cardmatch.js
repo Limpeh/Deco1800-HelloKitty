@@ -68,10 +68,11 @@ class CardSet{
 	drawhand(num){
 		var ran;
 		var hand=[];
-		for (i=0; i<num; i++){
-			ran = Math.floor(Math.random() * cardlist.length);
-			hand.push(cardlist[ran]);
-			cardlist.splice(ran,1);
+		for (var i=0; i<num; i++){
+			ran = Math.floor(Math.random() * this.cardlist.length);
+			hand.push(this.cardlist[ran]);
+			console.log(this.cardlist);
+			this.cardlist.splice(ran,1);
 		}
 		return hand;
 	}
@@ -150,6 +151,7 @@ class game{
 	var setcards = [];
 	var num=5;
 	var json;
+	var check = 0;
 (function($){
 	
 	function getCard(teachID){
@@ -162,7 +164,6 @@ class game{
 					json = JSON.parse(data);
 					for (var i=0; i<json.length; i++){
 							loadCard = new Card(json[i][0],json[i][2],json[i][4],json[i][3]);
-							console.log(loadCard);
 							setcards.push(loadCard);
 					}
 				},
@@ -170,6 +171,8 @@ class game{
 					console.log("an error occured");
 				}
 			});
+			json = new CardSet("politics",setcards);
+			return setcards;
 	}
 	
 
@@ -182,7 +185,17 @@ class game{
 
 	}
 	$("form#Test").submit(function(event) {
-		getCard(1);
+		event.preventDefault();
+		setcard = getCard(1);
+		for (var i=0;i<setcard.length; i++){
+			var image = new Image();
+        image.src = setcard[i].imageurl;
+            image.style.display = "inline-block";
+            image.style.width = "10%";
+            image.style.margin = "1%";
+            image.style.verticalAlign = "top";
+			$("#show").append(image);
+		}
 	});
 	
 	$("form#Confirm").submit(function(event) {
