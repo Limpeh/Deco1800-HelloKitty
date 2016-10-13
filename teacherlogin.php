@@ -44,6 +44,7 @@
 	var json;
 	var pass;
 	var user;
+	var id;
 	$(document).ready(function(){
 
 		$('#signup').click(function(){
@@ -59,18 +60,18 @@
 		});
 		
 		function login(user, pass){
-			console.log(user);
-			console.log(pass);
 			$.ajax({
 					url:"teacherloginconnect.php",
 					type: "POST",
 					datatype: "JSON",
 					data: {username: user, password: pass},
 					success: function(data) {
-						console.log(data);
 						json = JSON.parse(data);
 						if (json.length>0){
 							console.log("it works");
+							id = json[0][0];
+							console.log(id);
+							window.open("http://deco1800-306.uqcloud.net/teacher_main.html","_self")
 						}
 					},
 					error: function() {
