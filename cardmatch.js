@@ -189,11 +189,11 @@ class game{
 		setcard = getCard(1);
 		for (var i=0;i<setcard.length; i++){
 			var image = new Image();
-        image.src = setcard[i].imageurl;
-            image.style.display = "inline-block";
-            image.style.width = "10%";
-            image.style.margin = "1%";
-            image.style.verticalAlign = "top";
+			image.src = setcard[i].imageurl;
+			image.style.display = "inline-block";
+			image.style.width = "10%";
+			image.style.margin = "1%";
+			image.style.verticalAlign = "top";
 			$("#show").append(image);
 		}
 	});
@@ -201,8 +201,14 @@ class game{
 	$("form#Confirm").submit(function(event) {
 		  event.preventDefault();
 		 var i = $("input[name='cardimage']:checked").val();
+		 if (i==null){
+			 return 1;
+		 }
 		 newcard.imageurl= loadedImages[i];
 		i = $("input[name='cardart']:checked").val();
+		if (i==null){
+			 return 1;
+		 }
 		newcard.excerpt=loadedEx[i];
 		newcard.articleurl = loadedArt[i];
 		if (newcard.keyword!="null"){
@@ -226,13 +232,17 @@ class game{
 	 });
     $("form#searchTrove").submit(function(event) {
         event.preventDefault();
+		$("#Images").empty();
+		$("#Articles").empty();
 		newcard = new Card("null","null","null","null");
-		//keywordcards.push(new Card("null","null","null","null"));
         loadedImages = [];
 	found = 0;
 		count=0;
         //get input values
         var searchTerm = $("#searchTerm").val().trim();
+		if (searchTerm == null){
+			return 1;
+		}
         searchTerm = searchTerm.replace(/ /g, "%20");
        // var sortBy = $("#sortBy").val();
         var apiKey = "d1u5avs2ukffes6g";
@@ -379,32 +389,20 @@ function getArticleText(index, item){
 
     }
   function printMultiImages(num) {
-		//newcard.keyword=$("#searchTerm").val();
-		//newcard.imageurl=loadedImages[0];
-            
+
 			for (i=0;i<num;i++){
 				var x=1;
 				var image = new Image();
-				image.src = loadedImages[i];
-				image.style.display = "inline-block";
-				image.style.width = "90%";
-				image.style.margin = "1%";
-				image.style.verticalAlign = "top";
-				$("#Images").append(" <label><input type='radio' name='cardimage' value='"+i+"'><div class = '"+i+"'id='outputImg'></div><label/>");
-				$("."+i).append(image);
+				if (loadedImages[i] != undefined){
+					image.src = loadedImages[i];
+					image.style.display = "inline-block";
+					image.style.width = "90%";
+					image.style.margin = "1%";
+					image.style.verticalAlign = "top";
+					$("#Images").append(" <label><input type='radio' name='cardimage' value='"+i+"'><div class = '"+i+"'id='outputImg'></div><label/>");
+					$("."+i).append(image);
+				}
 			}
-        }
-
-   function printImages() {
-		newcard.keyword=$("#searchTerm").val();
-		newcard.imageurl=loadedImages[0];
-            var image = new Image();
-            image.src = newcard.imagecard()[1];
-            image.style.display = "inline-block";
-            image.style.width = "90%";
-            image.style.margin = "1%";
-            image.style.verticalAlign = "top";
-            $("#outputImg").append(image);
         }
 
     // from http://css-tricks.com/snippets/javascript/get-url-variables/
