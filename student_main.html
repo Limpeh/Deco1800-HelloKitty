@@ -1,6 +1,15 @@
 <?php
-
 	session_start();
+	if (isset($_SESSION['auth']) {
+		if ($_SESSION['auth'] == false) {
+			header('location: index.php'); 
+		}
+	}
+	
+	if (isset($_SESSION['username'])) {
+		echo "Welcome ".$_SESSION['username']; 
+	}
+	
 ?>
 
 <!doctype html>

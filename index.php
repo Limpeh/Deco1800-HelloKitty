@@ -1,4 +1,14 @@
+<?php
+	session_start(); 
+	if(isset($_SESSION['auth']))	 {
+		if ($_SESSION['auth'] == true) {
+			header("location: student_main.html");
+		}
+	}
+?>
+
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -27,10 +37,10 @@
 		<form id="login" action="studentloginconnect.php" method="POST">
 		
 		<p><label for="username">Username</label></p>
-		<p><input type="text" id="username" name="logindets" placeholder="Username" class="login" /></p>
+		<p><input type="text" id="username" name="username" placeholder="Username" class="login" /></p>
 		
 		<p><label for="password">Password</label></p>
-		<p><input type="password" id="password" name="logindets" placeholder="Password" class="login"/></p>
+		<p><input type="password" id="password" name="password" placeholder="Password" class="login"/></p>
 		<p><input type="submit" value="Log in"></p>
 	
 		</form>

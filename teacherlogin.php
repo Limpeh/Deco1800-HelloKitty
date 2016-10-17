@@ -1,4 +1,14 @@
+<?php
+	session_start(); 
+	if(isset($_SESSION['auth']))	 {
+		if ($_SESSION['auth'] == true) {
+			header("location: teacher_main.html");
+		}
+	}
+?>
+
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -24,7 +34,7 @@
 	</div>
 	<div id="sign_in">
 		<p><h2>Teacher Login</h2></p>
-		<form id="login" action=#>
+		<form id="login" action="teacherloginconnect.php" method="POST">
 		
 		<p><label for="username">Username</label></p>
 		<p><input type="text" id="username" name="logindets" placeholder="Username" class="login" /></p>
@@ -40,52 +50,6 @@
 		<a href="index.php">Student Login</a>
 	</div>
 
-	<script>
-	var json;
-	var pass;
-	var user;
-	var id;
-	$(document).ready(function(){
-
-		$('#signup').click(function(){
-	
-			$('#pop_background').fadeIn();
-			$('#pop_box').fadeIn();
-		});
-	
-		$('#pop_background').click(function(){
-	
-			$('#pop_background').fadeOut();
-			$('#pop_box').fadeOut();
-		});
-		
-		function login(user, pass){
-			$.ajax({
-					url:"teacherloginconnect.php",
-					type: "POST",
-					datatype: "JSON",
-					data: {username: user, password: pass},
-					success: function(data) {
-						json = JSON.parse(data);
-						if (json.length>0){
-							console.log("it works");
-							id = json[0][0];
-							console.log(id);
-							window.open("http://deco1800-306.uqcloud.net/teacher_main.html","_self")
-						}
-					},
-					error: function() {
-						console.log("an error occured");
-					}
-				});
-		}
-		$("form#login").submit(function(event) {
-			login($("#username").val(), $("#password").val());
-		})
-	
-	});
-
-	</script>
 
 	<div id="footer">
 		<ul>	

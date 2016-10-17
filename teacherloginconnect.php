@@ -5,23 +5,41 @@ include 'dbhconnect.php';
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$sql = "SELECT * 
-FROM Teacher
-WHERE Username = '$username' AND Password = '$password'";
+echo $username." "; 
+echo $password." "; 
+
+$sql = "SELECT * FROM Teacher";
+
 $result = mysqli_query($conn, $sql);
+$_SESSION['auth'] = false; 
 
-if (empty($result)){
-	echo $result;
+if (!$result) {
+	echo "Error: ".mysqli_error($conn, $result);
 }
-else {
-	$array = [];
-while( $row = mysqli_fetch_row($result)){
-		array_push( $array, $row );
-	}
+
+ while ($row = mysqli_fetch_array($result)) 
+ {
+	 if($_POST['username'] == $row['Username'] && $_POST['password'] == $row['Password']) {
+		     $_SESSION['username'] = $row['Username'];
+			 $_SESSION['auth'] = true;
+			 echo "User has logged in!";
+			 break; 			 
+	 }
+ }
+
+
+/* 
+if (!$row = mysqli_fetch_assoc($result)){
+	echo "Incorrect username or password";
+	$_SESSION['auth']= false; 
+} */
+/* else {
+	echo $row['username']." ";
 	$_SESSION['id'] = $row['id'];
-	echo json_encode( $array );
-}
+	$_SESSION['username'] = $row['Username']; 
+	$_SESSION['auth'] = true; 
+} */
 
-//header("Location:teacher_main.html")
+//header("Location:student_main.html");
 
 ?>
