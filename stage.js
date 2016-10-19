@@ -1,16 +1,14 @@
 $(document).ready(function(){
-	useid = parseInt($("#idnum").text());
-		setcard = getCard(useid);
-		$("#show").empty();
-		for (var i=0;i<setcard.length; i++){
+		useid = parseInt($("#idnum").text());
+		json = getCard(1);
+		for (var i=0;i<json.cardset.length; i++){
 			var image = new Image();
-			image.src = setcard[i].imageurl;
+			image.src = json.cardset[i].imageurl;
 			image.style.display = "inline-block";
 			image.style.width = "10%";
 			image.style.margin = "1%";
 			image.style.verticalAlign = "top";
-			$("."+i).remove();
-			$("#show").append("<div class = '"+i+"'></div>");
-					$("."+i).append(image);
+			$("#"+2*i).append(image);
+			$("#"+2*i).append(json.cardset[i].excerpt);
 		}
-}
+});

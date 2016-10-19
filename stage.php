@@ -59,7 +59,6 @@
 			document.getElementById('clock').innerHTML = time-count;
 		}
 	</script>
-	<script src="cardmatch.js" type="text/javascript"></script> 
-	<script src="stage.js" type="text/javascript"></script> 
+	<script src="cardgame.js" type="text/javascript"></script> 
 	</body>
 </html>

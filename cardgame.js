@@ -71,9 +71,10 @@ class CardSet{
 		for (var i=0; i<num; i++){
 			ran = Math.floor(Math.random() * this.cardlist.length);
 			hand.push(this.cardlist[ran]);
-			console.log(this.cardlist);
+			//console.log(this.cardlist);
 			this.cardlist.splice(ran,1);
 		}
+		console.log(hand);
 		return hand;
 	}
 }
@@ -167,34 +168,41 @@ class game{
 							loadCard = new Card(json[i][0],json[i][2],json[i][4],json[i][3]);
 							setcards.push(loadCard);
 					}
+					json = new CardSet("politics",setcards);
+					json = json.drawhand(3);
+					contdraw();
 				},
 				error: function() {
 					console.log("an error occured");
 				}
 			});
-			json = new CardSet("politics",setcards);
-			json.drawhand(3)
-			return json;
+			
 	}
 	
-	$("form#Test").submit(function(event) {
-		event.preventDefault();
+	$(document).ready(function(){
 		useid = parseInt($("#idnum").text());
-		json = getCard(1);
-		for (var i=0;i<json.cardset.length; i++){
-			var image = new Image();
-			image.src = json.cardset[i].imageurl;
-			image.style.display = "inline-block";
-			image.style.width = "10%";
-			image.style.margin = "1%";
-			image.style.verticalAlign = "top";
-			$("#"+2*i).append(image);
-			$("#"+2*i).append(json.cardset[i].excerpt);
-		}
+		console.log(useid);
+		getCard(useid);
 	});
 	
- 
-}
+function contdraw(){	
+	
+	for (var i=0;i<json.length; i++){
+			cards = json;
+			console.log(cards);
+			var image = new Image();
+			image.src = cards[i].imageurl;
+			image.style.display = "inline-block";
+			image.style.width = "90%";
+			image.style.margin = "1%";
+			image.style.verticalAlign = "top";
+			$("#show").append(" <label><input type='radio' name='cardimage' value='"+i+"'><div class = '"+i+"'id='outputImg'></div><label/>");
+			$("."+i).append(image);
+			$("#show").append(" <label><input type='radio' name='cardart' value='"+i+"'><div class = 'A"+i+"'id='outputArt'></div><label/>");
+			$(".A"+i).append(cards[i].excerpt);
+		}
+	};
+	
 
   function printMultiImages(num) {
 
@@ -219,7 +227,7 @@ class game{
 		for (i=0;i<cards.length;i++){
 			var x=1;
 			var image = new Image();
-			image.src = cards[i].imgurl;
+			image.src = cards[i].imageurl;
 			image.style.display = "inline-block";
 			image.style.width = "90%";
 			image.style.margin = "1%";
