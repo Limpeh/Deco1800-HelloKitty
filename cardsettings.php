@@ -37,8 +37,8 @@
 
 		<div id="settings">
 			<h2>Stage Settings</h2>
-				<div class="wrap" id="show">
-				</div>
+			<div class="wrap" id="show">
+			</div>
 			<form action="#" id="Test">
 				<button class="settingsButton" type="submit" id="tstbtn">test</button>
 			</form>

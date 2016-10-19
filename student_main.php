@@ -39,7 +39,7 @@
 	
 	<div id="student_main">
 		<ul>
-			<li><a href="about.html">Play</a></li>
+			<li><a href="stage.php">Play</a></li>
 			<li><a href="favourites.html">Favorites</a></li>
 			<li><a href="student_instructions.php">Instructions</a></li>
 		</ul>
