@@ -30,7 +30,6 @@
 
 <body>
 
-	
 <div id="wrapper">
 	<div id="banner">
 		<a href="student_main.php"><h1>CARDMATCH</h1></a>
@@ -38,12 +37,10 @@
 	</div>
 	
 	<div id="student_main">
-		<ul>
-			<li><a href="stage.php">Play</a></li>
-			<li><a href="favourites.html">Favorites</a></li>
-			<li><a href="student_instructions.php">Instructions</a></li>
-		</ul>
-		<a href="logoutconnect.php">Exit</a> 
+		<div><a class="button" href="stage.php">Play</a></div>
+		<div><a class="button" href="favourites.html">Favorites</a></div>
+		<div><a class="button" href="student_instructions.php">Instructions</a></div>
+		<div><a class="button" href="logoutconnect.php">Exit</a></div>
 	</div>
 
 	

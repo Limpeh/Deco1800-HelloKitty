@@ -20,14 +20,14 @@
 
 <body>
 <div id="wrapper">
-	<div id="Banner">
-		<p><h1>CARDMATCH</h1></p>
-		<p><h3>The learning game</h3></p>
+	<div id="banner">
+		<a href="index.php"><h1>CARDMATCH</h1></a>
+		<p><h3>The Learning Game</h3></p>
 	</div>
 	<div id="pop_background"></div>
 	<div id="pop_box">
 		<p>Sign up as a: </p>
-			<ul>
+		<ul id="signUpChoice">
 			<li><a href="student_sign_up.php">Student</a></li>
 			<li><a href="teacher_sign_up.php">Teacher</a></li>
 		</ul>
@@ -41,12 +41,12 @@
 		
 		<p><label for="password">Password</label></p>
 		<p><input type="password" id="password" name="password" placeholder="Password" class="login"/></p>
-		<p><input type="submit" value="Log in"></p>
+		<p><input class="loginButton" type="submit" value="Log in"></p>
 	
 		</form>
 	
 		<p>New to Cardmatch? Click here to sign up!</p>
-		<p><input id="signup" type="submit" value="Sign Up"></p>
+		<p><input class="loginButton" id="signup" type="submit" value="Sign Up"></p>
 		<a href="teacherlogin.php">Teacher Login</a>
 	</div>
 

@@ -45,11 +45,9 @@
 	</div>
 	
 	<div id="teacher_main">
-		<ul>
-			<li><a href="cardsettings.php">Stage Customization</a></li>
-			<li><a href="teacher_instructions.php">Instructions</a></li>
-		</ul>
-		<a href="logoutconnect.php">Exit</a> 
+		<div><a class="button" href="cardsettings.php">Stage Customization</a></div>
+		<div><a class="button" href="teacher_instructions.php">Instructions</a></div>
+		<div><a href="logoutconnect.php">Exit</a></div>
 	</div>
 	
 	<div id="footer">

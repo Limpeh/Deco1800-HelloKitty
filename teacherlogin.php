@@ -21,46 +21,63 @@
 </head>
 
 <body>
-<div id="wrapper">
-	<div id="Banner">
-		<p><h1>CARDMATCH</h1></p>
-		<p><h3>The learning game</h3></p>
-	</div>
-	<div id="pop_background"></div>
-	<div id="pop_box">
-		<p>Sign up as a: </p>
-			<ul>
-			<li><a href="student_sign_up.php">Student</a></li>
-			<li><a href="teacher_sign_up.php">Teacher</a></li>
-		</ul>
-	</div>
-	<div id="sign_in">
-		<p><h2>Teacher Login</h2></p>
-		<form id="login" action="teacherloginconnect.php" method="POST">
+	<div id="wrapper">
+		<div id="banner">
+			<a href="teacherlogin.php"><h1>CARDMATCH</h1></a>
+			<p><h3>The Learning Game</h3></p>
+		</div>
+		<div id="pop_background"></div>
+		<div id="pop_box">
+			<p>Sign up as a: </p>
+				<ul id="signUpChoice">
+				<li><a href="student_sign_up.php">Student</a></li>
+				<li><a href="teacher_sign_up.php">Teacher</a></li>
+			</ul>
+		</div>
+		<div id="sign_in">
+			<p><h2>Teacher Login</h2></p>
+			<form id="login" action="teacherloginconnect.php" method="POST">
+			
+			<p><label for="username">Username</label></p>
+			<p><input type="text" id="username" name="username" placeholder="Username" class="login" /></p>
+			
+			<p><label for="password">Password</label></p>
+			<p><input type="password" id="password" name="password" placeholder="Password" class="login"/></p>
+			<p><input type="submit" value="Log in"></p>
 		
-		<p><label for="username">Username</label></p>
-		<p><input type="text" id="username" name="username" placeholder="Username" class="login" /></p>
+			</form>
 		
-		<p><label for="password">Password</label></p>
-		<p><input type="password" id="password" name="password" placeholder="Password" class="login"/></p>
-		<p><input type="submit" value="Log in"></p>
-	
-		</form>
-	
-		<p>New to Cardmatch? Click here to sign up!</p>
-		<p><input id="signup" type="submit" value="Sign Up"></p>
-		<a href="index.php">Student Login</a>
+			<p>New to Cardmatch? Click here to sign up!</p>
+			<p><input id="signup" type="submit" value="Sign Up"></p>
+			<a href="index.php">Student Login</a>
+		</div>
+
+
+		<div id="footer">
+			<ul>	
+				<li><a href="#"/>Contact Us</a></li>
+				<li><a href="#"/>About Us</a></li>
+			</ul>
+		</div>
 	</div>
+	<script>
 
+		$(document).ready(function(){
 
-	<div id="footer">
-		<ul>	
-			<li><a href="#"/>Contact Us</a></li>
-			<li><a href="#"/>About Us</a></li>
-		</ul>
-	</div>
-	
-</div>
+			$('#signup').click(function(){
+		
+				$('#pop_background').fadeIn();
+				$('#pop_box').fadeIn();
+			});
+		
+			$('#pop_background').click(function(){
+		
+				$('#pop_background').fadeOut();
+				$('#pop_box').fadeOut();
+			});
+		
+		});
 
+	</script>
 </body>
 </html>
