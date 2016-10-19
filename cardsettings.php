@@ -1,6 +1,6 @@
 <?php
 	session_start();
-/*	if (!isset($_SESSION['auth'])) {
+	if (!isset($_SESSION['auth'])) {
 		echo "you shouldn't be here";
 		header('location: index.php'); 
 	} else {
@@ -15,7 +15,8 @@
 	
 	if (isset($_SESSION['username'])) {
 		echo "Welcome ".$_SESSION['username']; 
-	} */
+		echo "<div id='idnum'>".$_SESSION['ID']."</div>";
+	} 
 	
 ?>
 
@@ -33,6 +34,7 @@
 			<h1>CARDMATCH</h1>
 			<h3>The learning game</h3>
 		</div>
+
 		<div id="settings">
 			<h2>Stage Settings</h2>
 				<div class="wrap" id="show">

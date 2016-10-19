@@ -22,6 +22,7 @@ if (!$result) {
 	 if($_POST['username'] == $row['Username'] && $_POST['password'] == $row['Password']) {
 		     $_SESSION['username'] = $row['Username'];
 			 $_SESSION['auth'] = true;
+			 $_SESSION['ID'] = $row['teacherID'];
 			 echo "User has logged in!";
 			 break; 			 
 	 }

@@ -152,6 +152,7 @@ class game{
 	var num=5;
 	var json;
 	var check = 0;
+	var useid;
 (function($){
 	
 	function getCard(teachID){
@@ -186,7 +187,9 @@ class game{
 	}
 	$("form#Test").submit(function(event) {
 		event.preventDefault();
-		setcard = getCard(1);
+		useid = parseInt($("#idnum").text());
+		setcard = getCard(useid);
+		$("#show").empty();
 		for (var i=0;i<setcard.length; i++){
 			var image = new Image();
 			image.src = setcard[i].imageurl;
@@ -194,12 +197,15 @@ class game{
 			image.style.width = "10%";
 			image.style.margin = "1%";
 			image.style.verticalAlign = "top";
-			$("#show").append(image);
+			$("."+i).remove();
+			$("#show").append("<div class = '"+i+"'></div>");
+					$("."+i).append(image);
 		}
 	});
 	
 	$("form#Confirm").submit(function(event) {
 		  event.preventDefault();
+		  useid = parseInt($("#idnum").text());
 		 var i = $("input[name='cardimage']:checked").val();
 		 if (i==null){
 			 return 1;
@@ -223,11 +229,10 @@ class game{
 			$("#show").append(image);
 			$("#Images").empty();
 			$("#Articles").empty();
-
 			$.post("cardpost.php", 
-			{keyword: newcard.keyword, teacherID: 1, imagea:newcard.imageurl, texta: newcard.excerpt, textlink: newcard.articleurl},
+			{keyword: newcard.keyword, teacherID: useid, imagea:newcard.imageurl, texta: newcard.excerpt, textlink: newcard.articleurl},
 			function(data){
-				console.log("success");
+				console.log(data);
 			});
 	 });
     $("form#searchTrove").submit(function(event) {

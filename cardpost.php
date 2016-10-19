@@ -14,9 +14,9 @@ $result = mysqli_query($conn, $sql);
 if (!result) {
 	echo mysqli_error($conn);
 }
-
-echo $keyword;
-
+if (result) {
+echo $result;
+}
 /*header("Location: cardmatch.js");*/
    
 ?>
