@@ -1,3 +1,11 @@
+<?php
+	session_start(); 
+	if(isset($_SESSION['auth']))	 {
+		if ($_SESSION['auth'] == true) {
+			header("location: game.php");
+		}
+	}
+?>
 <DOCTYPE! html>
 <html>
 	<meta http-equiv="refresh" content="60;gameover.html" />
@@ -19,14 +27,9 @@
 			<h2>Time remaining:</h2>
 			<h1 id="clock">60</h1>
 		</div>
-		<div id="container">
-			<div class="box">&nbsp;</div>
-			<div class="box">&nbsp;</div>
-			<div class="box">&nbsp;</div>
-			<div class="box">&nbsp;</div>
-			<div class="box">&nbsp;</div>
-			<div class="box">&nbsp;</div>
-		</div>
+		<form action="#" id="Test">
+			<button class="settingsButton" type="submit" id="tstbtn">test</button>
+		</form>
 	</div>
 	<script>
 		var count = 60;
@@ -42,5 +45,6 @@
 			document.getElementById('clock').innerHTML = count;
 		}
 	</script>
+	<script src="cardmatch.js" type="text/javascript"></script> 
 	</body>
 </html>
