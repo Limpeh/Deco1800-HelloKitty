@@ -11,7 +11,7 @@
 <body>
 <div id="wrapper">
 	<div id="banner">
-		<a href="login.html"><h1>CARDMATCH</h1></a>
+		<a href="index.php"><h1>CARDMATCH</h1></a>
 		<p><h3>The Learning Game</h3></p>
 	</div>
 

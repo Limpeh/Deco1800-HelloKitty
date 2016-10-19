@@ -1,10 +1,17 @@
 <?php
 	session_start();
-	if (isset($_SESSION['auth']) {
+	if (!isset($_SESSION['auth'])) {
+		echo "you shouldn't be here";
+		//header('location: index.php'); 
+	} else {
 		if ($_SESSION['auth'] == false) {
-			header('location: index.php'); 
+		echo $_SESSION['auth'];
+			//header('location: index.php'); 
 		}
 	}
+	
+
+
 	
 	if (isset($_SESSION['username'])) {
 		echo "Welcome ".$_SESSION['username']; 
@@ -24,28 +31,26 @@
 <body>
 
 <?php
-	if (isset($_SESSION['id'])){
-		echo $_SESSION['id'];
+	if (isset($_SESSION['auth'])){
+		echo $_SESSION['auth'];
 	} else {
 		echo "You are not logged in!";
 	}
 ?>
-	
+
 <div id="wrapper">
 	<div id="banner">
-		<a href="login.html"><h1>CARDMATCH</h1></a>
+		<a href="teacher_main.php"><h1>CARDMATCH</h1></a>
 		<p><h3>The Learning Game</h3></p>
 	</div>
 	
-	<div id="student_main">
+	<div id="teacher_main">
 		<ul>
-			<li><a href="about.html">Play</a></li>
-			<li><a href="favourites.html">Favorites</a></li>
-			<li><a href="student_instructions.html">Instructions</a></li>
+			<li><a href="cardsettings.php">Stage Customization</a></li>
+			<li><a href="teacher_instructions.php">Instructions</a></li>
 		</ul>
-		<a href="login.html">Exit</a> 
+		<a href="logoutconnect.php">Exit</a> 
 	</div>
-
 	
 	<div id="footer">
 		<ul>	

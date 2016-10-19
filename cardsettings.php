@@ -1,3 +1,24 @@
+<?php
+	session_start();
+/*	if (!isset($_SESSION['auth'])) {
+		echo "you shouldn't be here";
+		header('location: index.php'); 
+	} else {
+		if ($_SESSION['auth'] == false) {
+		echo $_SESSION['auth'];
+			header('location: index.php'); 
+		} 
+	} 
+	
+
+
+	
+	if (isset($_SESSION['username'])) {
+		echo "Welcome ".$_SESSION['username']; 
+	} */
+	
+?>
+
 <DOCTYPE! HTML>
 <html>
 	<head>

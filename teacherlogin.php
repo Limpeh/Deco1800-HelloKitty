@@ -1,8 +1,10 @@
 <?php
 	session_start(); 
 	if(isset($_SESSION['auth']))	 {
+		echo "your logged in";
 		if ($_SESSION['auth'] == true) {
-			header("location: teacher_main.html");
+			echo "youve been authorised";
+			header("location: teacher_main.php");
 		}
 	}
 ?>

@@ -27,6 +27,7 @@ if (!$result) {
 	 }
  }
 
+ header("Location:student_main.php")
 
 /* 
 if (!$row = mysqli_fetch_assoc($result)){

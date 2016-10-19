@@ -2,7 +2,7 @@
 	session_start(); 
 	if(isset($_SESSION['auth']))	 {
 		if ($_SESSION['auth'] == true) {
-			header("location: student_main.html");
+			header("location: student_main.php");
 		}
 	}
 ?>

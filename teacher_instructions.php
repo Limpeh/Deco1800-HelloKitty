@@ -1,10 +1,17 @@
 <?php
 	session_start();
-	if (isset($_SESSION['auth']) {
+	if (!isset($_SESSION['auth'])) {
+		echo "you shouldn't be here";
+		header('location: index.php'); 
+	} else {
 		if ($_SESSION['auth'] == false) {
-			header('location: teacherlogin.php'); 
+		echo $_SESSION['auth'];
+			header('location: index.php'); 
 		}
 	}
+	
+
+
 	
 	if (isset($_SESSION['username'])) {
 		echo "Welcome ".$_SESSION['username']; 
@@ -24,17 +31,22 @@
 <body>
 <div id="wrapper">
 	<div id="banner">
-		<a href="login.html"><h1>CARDMATCH</h1></a>
+		<a href="teacher_main.php"><h1>CARDMATCH</h1></a>
 		<p><h3>The Learning Game</h3></p>
 	</div>
 	
-	<div id="teacher_main">
+	
+	<h3>Teacher Instructions</h3>
+	
 		<ul>
-			<li><a href="cardsettings.html">Stage Customization</a></li>
-			<li><a href="teacher_insructions.html">Instructions</a></li>
+			<li>Enter keyword of interested topic</li>
+			<li>Select the cards you are interested in</li>
+			<li>Save the stage</li>
 		</ul>
-		<a href="login.html">Exit</a> 
-	</div>
+	
+	
+	
+
 	
 	<div id="footer">
 		<ul>	
