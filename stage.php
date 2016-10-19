@@ -15,6 +15,7 @@
 	
 	if (isset($_SESSION['username'])) {
 		echo "Welcome ".$_SESSION['username']; 
+		echo "<div id='idnum'>".$_SESSION['ID']."</div>";
 	}
 	
 ?>
