@@ -23,12 +23,11 @@ if (!$result) {
 		     $_SESSION['username'] = $row['Username'];
 			 $_SESSION['auth'] = true;
 			 echo "User has logged in!";
-			 break;			 
+			 break; 			 
 	 }
  }
- 
-  header("Location:teacher_main.php")
 
+ header("Location:teacher_main.php")
 
 /* 
 if (!$row = mysqli_fetch_assoc($result)){

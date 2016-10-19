@@ -1,7 +1,7 @@
 <?php
 	session_start(); 
 	if(isset($_SESSION['auth']))	 {
-		echo "your logged in";
+		echo $_SESSION['auth'];
 		if ($_SESSION['auth'] == true) {
 			echo "youve been authorised";
 			header("location: teacher_main.php");
@@ -39,10 +39,10 @@
 		<form id="login" action="teacherloginconnect.php" method="POST">
 		
 		<p><label for="username">Username</label></p>
-		<p><input type="text" id="username" name="logindets" placeholder="Username" class="login" /></p>
+		<p><input type="text" id="username" name="username" placeholder="Username" class="login" /></p>
 		
 		<p><label for="password">Password</label></p>
-		<p><input type="password" id="password" name="logindets" placeholder="Password" class="login"/></p>
+		<p><input type="password" id="password" name="password" placeholder="Password" class="login"/></p>
 		<p><input type="submit" value="Log in"></p>
 	
 		</form>

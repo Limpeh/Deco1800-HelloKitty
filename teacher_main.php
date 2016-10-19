@@ -2,11 +2,11 @@
 	session_start();
 	if (!isset($_SESSION['auth'])) {
 		echo "you shouldn't be here";
-		//header('location: index.php'); 
+		header('location: teacherlogin.php'); 
 	} else {
 		if ($_SESSION['auth'] == false) {
 		echo $_SESSION['auth'];
-			//header('location: index.php'); 
+			header('location: teacherlogin.php'); 
 		}
 	}
 	
