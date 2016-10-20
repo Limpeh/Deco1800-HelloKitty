@@ -258,6 +258,7 @@ p {
 	padding: 1em;
 	border-radius: 1.5em;
 	color: #FFFFFF;
+}
 	/* ATTEMPT TO FLIP CARD
 	-webkit-transition: -webkit-transform 1s;
     -moz-transition: -moz-transform 1s;
@@ -285,6 +286,7 @@ p {
     -o-transform: rotateY( 180deg );
     transform: rotateY( 180deg );
 }*/
+
 form {
 	margin: 1em 3em 1em;
 }
