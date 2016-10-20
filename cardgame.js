@@ -131,18 +131,36 @@ class game{
 		clearInterval(mytime);
 	}
 }
-/** attempt to make cards flip
+var hid = 0;
 $(document).ready(function(){
-	$("#outputArt").append("<div class='front'>front</div>").append("<div class='back'>back</div>");
-	$("#outputArt").click(function() {
-		$("#outputArt").toggleClass("flipped")
+	$("#outputArt").children().hide();
+	//$("#outputArt").append("<div class='front'>front</div>").append("<div class='back'>back</div>");
+	$("#show").on("click","#outputArt",function(e) {
+		if (hid<2){
+			$(this).children().show();
+			hid++;
+			console.log(hid);
+		} else {
+			$("#show").children().children().hide();
+			hid=0;
+	}
+		e.stopPropagation();
 	});
-	$("#outputImg").append("<div class='front'>front</div>").append("<div class='back'>back</div>");
-	$("#outputImg").click(function() {
-		$("#outputImg").toggleClass("flipped")
+//	$("#outputImg").append("<div class='front'>front</div>").append("<div class='back'>back</div>");
+	$("#show").on("click","#outputImg",function(e) {
+		if (hid<2){
+			$(this).children().show();
+			hid++;
+			console.log(hid);
+		} else {
+			$("#show").children().children().hide();
+			hid=0;
+			console.log(hid);
+		}
+		e.stopPropagation();
 	});
 })
-**/
+
 /****//****//****//****//****//****//****//****//****//****//****//***/
 ///////////////////////////////////////////////////////////////////////
 /****//****//****//****//****//****//****//****//****//****//****//***/
@@ -207,11 +225,15 @@ function contdraw(){
 			image.style.width = "90%";
 			image.style.margin = "1%";
 			image.style.verticalAlign = "top";
-			$("#show").append(" <label><input type='radio' name='cardimage' value='"+cards[i].keyword+"'><div class = '"+i+"'id='outputImg'></div><label/>");
-			$("."+i).append(image);
-			$("#show").append(" <label><input type='radio' name='cardart' value='"+cards[i].keyword+"'><div class = 'A"+i+"'id='outputArt'></div><label/>");
-			$(".A"+i).append(cards[i].excerpt);
+			$("#show").append(" <div class = '"+cards[i].keyword+"'id='outputImg'></div>");
+			$("."+cards[i].keyword).append(image);
+			$("#show").append("<div class = 'A"+cards[i].keyword+"'id='outputArt'></div>");
+			$(".A"+cards[i].keyword).append(cards[i].excerpt);
+			$("."+cards[i].keyword).children().hide();
+			$(".A"+cards[i].keyword).children().hide();
 		}
+	//	$("#outputImg").children().hide();
+		//$("#outputArt").children().hide();
 	};
 	
 
