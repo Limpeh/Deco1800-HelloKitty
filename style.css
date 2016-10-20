@@ -29,7 +29,7 @@ h3 {
 	color: #FFFFFF;
 	text-decoration: none;
 	background-color: #4F3645;
-	display: block;
+	display: inline-block;
 	height: 2em;
 	width: 10em;
 	margin-top: 1em;
@@ -242,17 +242,49 @@ p {
 
 /* End of login */
 /* Start of stage settings */
-
+#wrap {
+	-webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+}
 #outputImg, #outputArt {
-	background-color: #DBC695;
-	width: 15em;
-	height: 20em;
+	background-color: #4F3645;
+	width: 13em;
+	height: 18em;
 	display: inline;
 	float: left;
 	margin: 3em;
 	padding: 1em;
 	border-radius: 1.5em;
+	color: #FFFFFF;
+	/* ATTEMPT TO FLIP CARD
+	-webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
 }
+#outputImg .front, #outputArt .front {
+	background-color: blue;
+}
+#outputImg .back, #outputArt .back {
+	background-color: green;
+	-webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+#outputImg .flipped, #outputArt .flipped {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}*/
 form {
 	margin: 1em 3em 1em;
 }

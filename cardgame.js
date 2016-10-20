@@ -131,9 +131,18 @@ class game{
 		clearInterval(mytime);
 	}
 }
-
-
-
+/** attempt to make cards flip
+$(document).ready(function(){
+	$("#outputArt").append("<div class='front'>front</div>").append("<div class='back'>back</div>");
+	$("#outputArt").click(function() {
+		$("#outputArt").toggleClass("flipped")
+	});
+	$("#outputImg").append("<div class='front'>front</div>").append("<div class='back'>back</div>");
+	$("#outputImg").click(function() {
+		$("#outputImg").toggleClass("flipped")
+	});
+})
+**/
 /****//****//****//****//****//****//****//****//****//****//****//***/
 ///////////////////////////////////////////////////////////////////////
 /****//****//****//****//****//****//****//****//****//****//****//***/
@@ -154,6 +163,8 @@ class game{
 	var json;
 	var check = 0;
 	var useid;
+
+
 (function($){
 	
 	function getCard(teachID){
