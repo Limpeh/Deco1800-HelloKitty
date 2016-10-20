@@ -31,14 +31,14 @@
 	</form>
 	<p><a href="index.php">Back</a></p>
 
-	<div id="footer">
-		<ul>	
-			<li><a href="#"/>Contact us</a></li>
-			<li> | </li>
-			<li><a href="#"/>About us</a></li>
-		</ul>
-	</div>
+	
 </div>
-
+<footer id="footer">
+	<ul>	
+		<li><a href="#"/>Contact us</a></li>
+		<li> | </li>
+		<li><a href="#"/>About us</a></li>
+	</ul>
+</footer>
 </body>
 </html>

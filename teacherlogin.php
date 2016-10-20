@@ -49,16 +49,12 @@
 		
 			<p>New to Cardmatch? Click here to sign up!</p>
 			<p><input id="signup" type="submit" value="Sign Up"></p>
-			<a href="index.php">Student Login</a>
+			<p>Are you a student? Click here to sign in instead.</p>
+			<a class="loginButton" href="index.php">Student Login</a>
 		</div>
 
 
-		<div id="footer">
-			<ul>	
-				<li><a href="#"/>Contact Us</a></li>
-				<li><a href="#"/>About Us</a></li>
-			</ul>
-		</div>
+		
 	</div>
 	<script>
 
@@ -79,5 +75,12 @@
 		});
 
 	</script>
+	<div id="footer">
+		<ul>	
+			<li><a href="#"/>Contact Us</a></li>
+			<li> | </li>
+			<li><a href="#"/>About Us</a></li>
+		</ul>
+	</div>
 </body>
 </html>

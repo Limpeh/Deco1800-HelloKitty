@@ -22,7 +22,6 @@ h2 {
 h3 {
 	height: 1.2em;
 }
-
 .button {
 	border: 1px solid black;
 	border-radius: 0.5em;
@@ -73,6 +72,14 @@ h3 {
 	text-decoration: none;
 	color: white;
 }
+#sign_in {
+	margin-bottom: 2em;
+	min-height: 30em;
+	position: relative;
+}
+#wrapper {
+	min-height: calc(100% - 100px);
+}
 
 #footer{
 	border-top: 1px solid black;
@@ -80,10 +87,14 @@ h3 {
 	bottom: 0;
 	margin-top: 1.5em;
 	background-color: #36454F;
-	position:fixed;
 	width: 100%;
-	height: 2em;
+	position: relative;
+	height: 100px;
 	color: #FFFFFF;
+	margin-bottom:0;
+	text-align: left;
+	font-size: 0.8em;
+	display: block;
 }
 
 #footer ul{
@@ -107,9 +118,19 @@ li a {
 }
 
 .loginButton {
-	font-size: 1em;
+	font-size: 0.8em;
+	margin: 0.5em;
+	height: 1.7em;
+	border: 0.1em solid black;
+	padding: 0.1em 0.4em 0.1em;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #4F3645;
+	border-radius: 0.5em;
 }
-
+.loginButton:hover, .loginButton:active {
+	background-color: #1F78ED;
+}
 /* End of general */
 
 /* Start of mainstage */
