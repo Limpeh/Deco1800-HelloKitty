@@ -207,9 +207,9 @@ function contdraw(){
 			image.style.width = "90%";
 			image.style.margin = "1%";
 			image.style.verticalAlign = "top";
-			$("#show").append(" <label><input type='radio' name='cardimage' value='"+i+"'><div class = '"+i+"'id='outputImg'></div><label/>");
+			$("#show").append(" <label><input type='radio' name='cardimage' value='"+cards[i].keyword+"'><div class = '"+i+"'id='outputImg'></div><label/>");
 			$("."+i).append(image);
-			$("#show").append(" <label><input type='radio' name='cardart' value='"+i+"'><div class = 'A"+i+"'id='outputArt'></div><label/>");
+			$("#show").append(" <label><input type='radio' name='cardart' value='"+cards[i].keyword+"'><div class = 'A"+i+"'id='outputArt'></div><label/>");
 			$(".A"+i).append(cards[i].excerpt);
 		}
 	};
