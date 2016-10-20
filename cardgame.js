@@ -132,6 +132,7 @@ class game{
 	}
 }
 var hid = 0;
+var score = 0;
 var id = [];
 $(document).ready(function(){
 	$("#outputArt").children().hide();
@@ -147,6 +148,7 @@ $(document).ready(function(){
 					console.log("yay");
 					$("."+id[0]).remove();
 					$(".A"+id[0]).remove();
+					score++;
 			} else {
 			$("#show").children().children().hide();
 			hid=0;
@@ -170,6 +172,7 @@ $(document).ready(function(){
 					console.log("yay");
 					$("."+id[0]).remove();
 					$(".A"+id[0]).remove();
+					score++;
 			} else {
 			$("#show").children().children().hide();
 			hid=0;
