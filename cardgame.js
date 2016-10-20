@@ -132,14 +132,26 @@ class game{
 	}
 }
 var hid = 0;
+var id = [];
 $(document).ready(function(){
 	$("#outputArt").children().hide();
 	//$("#outputArt").append("<div class='front'>front</div>").append("<div class='back'>back</div>");
 	$("#show").on("click","#outputArt",function(e) {
 		if (hid<2){
 			$(this).children().show();
+			id[hid] = id[hid] = $(this).attr("class").substring(1);
 			hid++;
-			console.log(hid);
+			console.log(id[hid-1]);
+			if (hid==2){
+			if (id[1]==id[0]){
+					console.log("yay");
+					$("."+id[0]).remove();
+					$(".A"+id[0]).remove();
+			} else {
+			$("#show").children().children().hide();
+			hid=0;
+			}}
+
 		} else {
 			$("#show").children().children().hide();
 			hid=0;
@@ -150,12 +162,22 @@ $(document).ready(function(){
 	$("#show").on("click","#outputImg",function(e) {
 		if (hid<2){
 			$(this).children().show();
+			id[hid] = $(this).attr("class");
 			hid++;
-			console.log(hid);
+			console.log(id[hid-1]);
+			if (hid==2){
+			if (id[1]==id[0]){
+					console.log("yay");
+					$("."+id[0]).remove();
+					$(".A"+id[0]).remove();
+			} else {
+			$("#show").children().children().hide();
+			hid=0;
+			}}
 		} else {
 			$("#show").children().children().hide();
 			hid=0;
-			console.log(hid);
+			console.log(id[hid]);
 		}
 		e.stopPropagation();
 	});
