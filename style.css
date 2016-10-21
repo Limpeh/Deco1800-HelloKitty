@@ -159,12 +159,13 @@ li a {
 	height: 100px;
 	width: 100px;
 }
-#timer {
+#timer, #scoreCount {
 	float: right;
 	margin-right: 5em;
 	text-align: center;
+	margin-left: 0;
 }
-#timer h2 {
+#timer h2, #scoreCount h2 {
 	margin: 0;
 }
 /*End of mainstage */
