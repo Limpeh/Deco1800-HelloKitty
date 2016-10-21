@@ -34,6 +34,9 @@
 			<h1>CARDMATCH</h1>
 			<h3>The learning game</h3>
 		</div>
+		
+		<a href="teacher_main.php"><img src="./image/home.png" height="50px"></a></p>
+		<a href="logoutconnect.php">Log Out</a>
 
 		<div id="settings">
 			<h2>Stage Settings</h2>

@@ -35,6 +35,8 @@
 		<p><h3>The Learning Game</h3></p>
 	</div>
 	
+	<a href="teacher_main.php"><img src="./image/home.png" height="50px"></a></p>
+	
 	
 	<h3>Teacher Instructions</h3>
 	
