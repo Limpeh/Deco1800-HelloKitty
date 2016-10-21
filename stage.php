@@ -52,7 +52,7 @@
 			timeCount -=1;
 			if(timeCount == 0){
 				clearInterval(counter);
-				window.location='gameover.html'
+				window.location='stagelose.php'
 			}
 			
 			document.getElementById('clock').innerHTML = timeCount;

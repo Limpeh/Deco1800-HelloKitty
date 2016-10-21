@@ -140,7 +140,7 @@ $(document).ready(function(){
 	$("#show").on("click","#outputArt",function(e) {
 		if (hid<2){
 			$(this).children().show();
-			id[hid] = id[hid] = $(this).attr("class").substring(1);
+			id[hid] = $(this).attr("class").substring(1);
 			hid++;
 			console.log(id[hid-1]);
 			if (hid==2){
@@ -150,12 +150,16 @@ $(document).ready(function(){
 					$(".A"+id[0]).remove();
 					score++;
 			} else {
-			$("#show").children().children().hide();
+			$(this).children().show();
+			$(this).children().fadeOut(5000);
+			$("#show").children().children().fadeOut(5000);
 			hid=0;
 			}}
 
 		} else {
-			$("#show").children().children().hide();
+			$(this).children().show();
+			$(this).children().fadeOut(5000);
+			$("#show").children().children().fadeOut(5000);
 			hid=0;
 	}
 		e.stopPropagation();
@@ -174,13 +178,17 @@ $(document).ready(function(){
 					$(".A"+id[0]).remove();
 					score++;
 			} else {
-			$("#show").children().children().hide();
+			$(this).children().show();
+			$(this).children().fadeOut(5000);
+			$("#show").children().children().fadeOut(5000);
 			hid=0;
 			}}
 		} else {
-			$("#show").children().children().hide();
+			$(this).children().show();
+			$(this).children().fadeOut(5000);
+			$("#show").children().children().fadeOut(5000);
 			hid=0;
-			console.log(id[hid]);
+			console.log(id["hats"]);
 		}
 		e.stopPropagation();
 	});
