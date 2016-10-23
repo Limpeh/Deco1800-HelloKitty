@@ -133,6 +133,7 @@ class game{
 }
 var hid = 0;
 var score = 0;
+var cheque = 0;
 var id = [];
 $(document).ready(function(){
 	$("#outputArt").children().hide();
@@ -142,9 +143,10 @@ $(document).ready(function(){
 			$(this).children().show();
 			id[hid] = $(this).attr("class").substring(1);
 			hid++;
+			cheque = 1;
 			console.log(id[hid-1]);
 			if (hid==2){
-			if (id[1]==id[0]){
+			if (id[1]==id[0] && cheque == 1){
 					console.log("yay");
 					$("."+id[0]).remove();
 					$(".A"+id[0]).remove();
@@ -172,7 +174,7 @@ $(document).ready(function(){
 			hid++;
 			console.log(id[hid-1]);
 			if (hid==2){
-			if (id[1]==id[0]){
+			if (id[1]==id[0]&& cheque == 1){
 					console.log("yay");
 					$("."+id[0]).remove();
 					$(".A"+id[0]).remove();
