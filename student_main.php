@@ -36,6 +36,8 @@
 		<p><h3>The Learning Game</h3></p>
 	</div>
 	
+	<a href="teacher_main.php"><img src="./image/home.png" height="50px"></a></p>
+	
 	<div id="student_main">
 		<div><a class="button" href="stage.php">Play</a></div>
 		<div><a class="button" href="favourites.html">Favorites</a></div>
