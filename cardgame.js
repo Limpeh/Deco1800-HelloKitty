@@ -30,36 +30,8 @@ $(document).ready(function(){
 		$("#outputImg").css("background-color", "blue");
 	});
 });
-class User{
-	constructor(username,upassword){
-		this.username = username;
-		this.upassword = upassword;
-	}
-}
-class student extends User{
-	constructor(username,upassword,teacherID,favourites){
-			super(username,upassword);
-			this.teacherID=teacherID;
-			this.favourites=favourites;
-	}
-	addfav(fav){
-		this.favourites.push(fav);
-	}
-}
-class teacher extends User{
-		constructor(username,upassword,teacherID){
-			super(username,upassword);
-			this.teacherID=teacherID;
-			this.students=[];
-			this.stages=[];
-	}
-	addstudent(student){
-		this.students.push(student);
-	}
-	addstage(stage){
-		this.stages.push(stage);
-	}
-}
+
+
 class CardSet{
 	constructor(topic,cardlist){
 		this.topic=topic;
@@ -78,64 +50,65 @@ class CardSet{
 		return hand;
 	}
 }
-class game{
-	constructor(student,cardset,pairs,timer){
-		this.student=student;
-		this.pairs=pairs;
-		this.matches=0;
-		this.hand=cardset.drawhand;
-		this.cards=[];
-		this.score=0;
-		this.combo=0;
-		this.timer=timer;
-	}
-	createcards(){
-		for(i=0;i<pairs;i++){
-			this.cards.push(this.hand[i].articlecard());
-			this.cards.push(this.hand[i].imageecard());
-		}
-	}
-	matchscore(){
-		this.score+=combo;
-		this.combo++;
-	}
-	resetcombo(){
-		this.combo=1;
-	}
-	checkmatch(a,b){
-		if(cards[a][0]==cards[b][0]){
-			matchscore();
-			this.matches++;
-			if (matches==pairs){
-				return 2;
-			} else{
-				return 1;
-			}
-		} else{
-			return 0;
-		}
-	}
-	timedown(){
-		timer=timer-1;
-		if(timer==0){
-			return 1;
-		} else{
-			timestop();
-			return 0;
-		}
-	}
-	timerun(){
-		var mytime = setInterval(timedown(), 1000);
-	}
-	timestop(){
-		clearInterval(mytime);
-	}
-}
+
 var hid = 0;
 var score = 0;
 var cheque = 0;
 var id = [];
 $(document).ready(function(){
+
+})
+
+/****//****//****//****//****//****//****//****//****//****//****//***/
+///////////////////////////////////////////////////////////////////////
+/****//****//****//****//****//****//****//****//****//****//****//***/
+	var keywordcards=[];
+	var loadedArt = [];
+	var loadedImages = [];
+	var loadedEx = [];
+    var urlPatterns = ["flickr.com", "nla.gov.au", "artsearch.nga.gov.au", "recordsearch.naa.gov.au", "images.slsa.sa.gov.au"];
+    var found = 0;
+	var artic;
+	var searchZone = "newspaper";
+	var count=0;
+	var cardnum=0;
+	var newcard;
+	var loadCard;
+	var setcards = [];
+	var num=5;
+	var json;
+	var check = 0;
+	var useid;
+
+
+(function($){
+	function getCard(teachID){
+			$.ajax({
+				url:"cardget.php",
+				type: "POST",
+				datatype: "JSON",
+				data: {teacherID: teachID},
+				success: function(data) {
+					json = JSON.parse(data);
+					for (var i=0; i<json.length; i++){
+							loadCard = new Card(json[i][0],json[i][2],json[i][4],json[i][3]);
+							setcards.push(loadCard);
+					}
+					json = new CardSet("politics",setcards);
+					json = json.drawhand(3);
+					contdraw();
+				},
+				error: function() {
+					console.log("an error occured");
+				}
+			});
+			
+	}
+	
+	$(document).ready(function(){
+		useid = parseInt($("#idnum").text());
+		console.log(useid);
+		getCard(useid);
 	$("#outputArt").children().hide();
 	//$("#outputArt").append("<div class='front'>front</div>").append("<div class='back'>back</div>");
 	$("#show").on("click","#outputArt",function(e) {
@@ -151,6 +124,7 @@ $(document).ready(function(){
 				$("."+id[0]).remove();
 				$(".A"+id[0]).remove();
 				score++;
+				postCard(id[0]);
 				$("#score").empty();
 				$("#score").append(score);
 			} else {
@@ -188,6 +162,7 @@ $(document).ready(function(){
 					console.log("yay");
 					$("."+id[0]).remove();
 					$(".A"+id[0]).remove();
+					postCard(id[0]);
 					score++;
 					$("#score").empty();
 					$("#score").append(score);
@@ -211,59 +186,6 @@ $(document).ready(function(){
 		}
 		e.stopPropagation();
 	});
-})
-
-/****//****//****//****//****//****//****//****//****//****//****//***/
-///////////////////////////////////////////////////////////////////////
-/****//****//****//****//****//****//****//****//****//****//****//***/
-	var keywordcards=[];
-	var loadedArt = [];
-	var loadedImages = [];
-	var loadedEx = [];
-    var urlPatterns = ["flickr.com", "nla.gov.au", "artsearch.nga.gov.au", "recordsearch.naa.gov.au", "images.slsa.sa.gov.au"];
-    var found = 0;
-	var artic;
-	var searchZone = "newspaper";
-	var count=0;
-	var cardnum=0;
-	var newcard;
-	var loadCard;
-	var setcards = [];
-	var num=5;
-	var json;
-	var check = 0;
-	var useid;
-
-
-(function($){
-	
-	function getCard(teachID){
-			$.ajax({
-				url:"cardget.php",
-				type: "POST",
-				datatype: "JSON",
-				data: {teacherID: teachID},
-				success: function(data) {
-					json = JSON.parse(data);
-					for (var i=0; i<json.length; i++){
-							loadCard = new Card(json[i][0],json[i][2],json[i][4],json[i][3]);
-							setcards.push(loadCard);
-					}
-					json = new CardSet("politics",setcards);
-					json = json.drawhand(3);
-					contdraw();
-				},
-				error: function() {
-					console.log("an error occured");
-				}
-			});
-			
-	}
-	
-	$(document).ready(function(){
-		useid = parseInt($("#idnum").text());
-		console.log(useid);
-		getCard(useid);
 	});
 	
 function contdraw(){	
@@ -288,40 +210,18 @@ function contdraw(){
 		//$("#outputArt").children().hide();
 	};
 	
-
-  function printMultiImages(num) {
-
-			for (i=0;i<num;i++){
-				var x=1;
-				var image = new Image();
-				if (loadedImages[i] != undefined){
-					image.src = loadedImages[i];
-					image.style.display = "inline-block";
-					image.style.width = "90%";
-					image.style.margin = "1%";
-					image.style.verticalAlign = "top";
-					$("#Images").append(" <label><input type='radio' name='cardimage' value='"+i+"'><div class = '"+i+"'id='outputImg'></div><label/>");
-					$("."+i).append(image);
-				}
+		function postCard(keyword){
+			console.log(setcards.length);
+		for (var i=0; i<setcards.length; i++){
+			if (keyword == setcards[i].keyword){
+				loadCard= setcards[i]
 			}
-        }
-
-	
-	function printCardList(list){
-		cards = list.cardlist;
-		for (i=0;i<cards.length;i++){
-			var x=1;
-			var image = new Image();
-			image.src = cards[i].imageurl;
-			image.style.display = "inline-block";
-			image.style.width = "90%";
-			image.style.margin = "1%";
-			image.style.verticalAlign = "top";
-			$("#Images").append(" <label><input type='radio' name='cardimage' value='"+i+"'><div class = '"+i+"'id='outputImg'></div><label/>");
-			$("."+i).append(image);
-			$("#Articles").append(" <label><input type='radio' name='cardart' value='"+i+"'><div class = 'A"+i+"'id='outputArt'></div><label/>");
-			$(".A"+count).append(cards[i].excerpt);
 		}
+		$.post("favepost.php", 
+			{keyword: loadCard.keyword, imagea:loadCard.imageurl, texta: loadCard.excerpt, textlink: loadCard.articleurl},
+			function(data){
+				console.log(data);
+			});
 	}
     
     }(jQuery));
