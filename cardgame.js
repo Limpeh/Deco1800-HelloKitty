@@ -143,26 +143,36 @@ $(document).ready(function(){
 			$(this).children().show();
 			id[hid] = $(this).attr("class").substring(1);
 			hid++;
-			cheque = 1;
+			cheque++;
 			console.log(id[hid-1]);
 			if (hid==2){
 			if (id[1]==id[0] && cheque == 1){
-					console.log("yay");
-					$("."+id[0]).remove();
-					$(".A"+id[0]).remove();
-					score++;
+				console.log("yay");
+				$("."+id[0]).remove();
+				$(".A"+id[0]).remove();
+				score++;
+				$("#score").empty();
+				$("#score").append(score);
 			} else {
-			$(this).children().show();
-			$(this).children().fadeOut(5000);
-			$("#show").children().children().fadeOut(5000);
-			hid=0;
+				$(this).children().show();
+				hid=0;
+				cheque = 0;
+				id[0]=null;
+				id[1]="eggsegs";
+				$(this).children().fadeOut(5000);
+				$("#show").children().children().fadeOut(5000);
+
 			}}
 
 		} else {
 			$(this).children().show();
+			hid=0;
+			cheque = 0;
+			id[0]=null;
+			id[1]="eggsegs";
 			$(this).children().fadeOut(5000);
 			$("#show").children().children().fadeOut(5000);
-			hid=0;
+			
 	}
 		e.stopPropagation();
 	});
@@ -179,18 +189,25 @@ $(document).ready(function(){
 					$("."+id[0]).remove();
 					$(".A"+id[0]).remove();
 					score++;
+					$("#score").empty();
+					$("#score").append(score);
 			} else {
 			$(this).children().show();
+			hid=0;
+			cheque = 0;
+			id[0]=null;
+			id[1]="eggsegs";
 			$(this).children().fadeOut(5000);
 			$("#show").children().children().fadeOut(5000);
-			hid=0;
 			}}
 		} else {
 			$(this).children().show();
+			hid=0;
+			cheque = 0;
 			$(this).children().fadeOut(5000);
 			$("#show").children().children().fadeOut(5000);
-			hid=0;
-			console.log(id["hats"]);
+			id[0]=null;
+			id[1]="eggsegs";
 		}
 		e.stopPropagation();
 	});
