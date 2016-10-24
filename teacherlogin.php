@@ -43,12 +43,12 @@
 			
 			<p><label for="password">Password</label></p>
 			<p><input type="password" id="password" name="password" placeholder="Password" class="login"/></p>
-			<p><input type="submit" value="Log in"></p>
+			<p><input class="loginButton" type="submit" value="Log in"></p>
 		
 			</form>
 		
 			<p>New to Cardmatch? Click here to sign up!</p>
-			<p><input id="signup" type="submit" value="Sign Up"></p>
+			<p><input class="loginButton" id="signup" type="submit" value="Sign Up"></p>
 			<p>Are you a student? Click here to sign in instead.</p>
 			<a class="loginButton" href="index.php">Student Login</a>
 		</div>
