@@ -44,6 +44,8 @@
 		<p><h3>The Learning Game</h3></p>
 	</div>
 	
+	<a href="teacher_main.php"><img src="./image/home.png" height="50px"></a></p>
+	
 	<div id="teacher_main">
 		<div><a class="button" href="cardsettings.php">Stage Customization</a></div>
 		<div><a class="button" href="teacher_instructions.php">Instructions</a></div>

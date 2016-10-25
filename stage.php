@@ -36,7 +36,7 @@
 			<h3>The learning game</h3>
 	</div>
 	
-	<a href="teacher_main.php"><img src="./image/home.png" height="50px"></a></p>
+	<a href="student_main.php"><img src="./image/home.png" height="50px"></a></p>
 	
 	<div id="game">
 		<h2>Stage</h2>
