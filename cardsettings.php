@@ -14,8 +14,8 @@
 
 	
 	if (isset($_SESSION['username'])) {
-		echo "Welcome ".$_SESSION['username']; 
-		echo "<div id='idnum'>".$_SESSION['ID']."</div>";
+		echo "<div id='userwelcome'> Welcome ".$_SESSION['username']."&nbsp |</div>"; 
+		echo "<div id='idnum'> Connected with teacher ID: ".$_SESSION['ID']."</div>";
 	} 
 	
 ?>
@@ -30,23 +30,28 @@
 		<script src="http://code.jquery.com/jquery-1.12.3.js" type="text/javascript"></script>
 	</head>
 	<body>
+	<a href="teacher_main.php"><img src="./image/home.png" height="50px"></a></p>
 		<div id="banner">
 			<h1>CARDMATCH</h1>
 			<h3>The learning game</h3>
 		</div>
 		
-		<a href="teacher_main.php"><img src="./image/home.png" height="50px"></a></p>
-		<a href="logoutconnect.php">Log Out</a>
 
 		<div id="settings">
 			<h2>Stage Settings</h2>
-			<div class="wrap" id="show">
-			</div>
-			<form action="#" id="Test">
-				<button class="settingsButton" type="submit" id="tstbtn">test</button>
+			<!--<div class="wrap" id="show">
+			</div>-->
+			<!-- <form action="#" id="Test">
+				<button class="button" type="submit" id="tstbtn">test</button>
+			</form> -->
+			<h3>Enter a search term to generate cards. Click on the two most appropriate cards.
+			<form class="search" action="#" id="searchTrove">
+				<input class="searchBar" id="searchTerm" type="text"  placeholder="Enter a keyword"/>
+				<button class="button" type="submit" id="searchbtn">Search</button>
 			</form>
+			<h3>Click confirm to add cards to the stage.</h3>
 			<form action ="#" id="confirm">
-				<select name= "cardno">
+				<!--<select name= "cardno">
 					<option value="6">6</option>
 					<option value="8">8</option>
 					<option value="10">10</option>
@@ -55,12 +60,8 @@
 					<option value="60">60s</option>
 					<option value="90">90s</option>
 					<option value="120">120s</option>
-				</select>
-				<input class="settingsButton" type="submit" value="Confirm"></input>
-			</form>
-			<form action="#" id="searchTrove">
-				<input id="searchTerm" type="text">
-				<button class="settingsButton" type="submit" id="searchbtn">Search</button>
+				</select>-->
+				<input class="button" type="submit" value="Confirm"></input>
 			</form>
 		</div>
 		<div class="wrap">
@@ -69,6 +70,14 @@
 			<form action="#" id="Articles">
 			</form>
 			<script src="cardmatch.js" type="text/javascript"></script> 
+		</div>
+		<div id="space"></div>
+		<div id="footer">
+			<ul>	
+				<li><a href="#"/>Contact Us</a></li>
+				<li> | </li>
+				<li><a href="#"/>About Us</a></li>
+			</ul>
 		</div>
 	</body>
 </html>

@@ -14,8 +14,8 @@
 
 	
 	if (isset($_SESSION['username'])) {
-		echo "Welcome ".$_SESSION['username']; 
-		echo "<div id='idnum'>".$_SESSION['ID']."</div>";
+		echo "<div id='userwelcome'> Welcome ".$_SESSION['username']."&nbsp |</div>"; 
+		echo "<div id='idnum'> Connected to teacher ID: ".$_SESSION['ID']."</div>";
 	}
 	
 ?>
@@ -63,10 +63,11 @@
 			document.getElementById('clock').innerHTML = timeCount;
 		}
 	</script>
-	
+	<div id="gamecards">
 	<div class="wrap" id="show"></div>
 	<form action="#" id="Test">
 	</form>
+	</div>
 	<script src="cardgame.js" type="text/javascript"></script> 
 	</body>
 </html>

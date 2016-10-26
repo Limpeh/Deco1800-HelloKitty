@@ -6,8 +6,26 @@
 	font-family:'Baloo Tamma', cursive;
 }
 
+#idnum, #userwelcome {
+	float: left;
+	color: white;
+	position: absolute;
+	margin-left: 0.3em;
+}
+#idnum {
+	margin-left: 11em;
+}
 body {
 	background-image: url("image/background.gif");
+}
+
+a img {
+	float: right;
+	position: relative;
+	margin-top: 3.5em;
+	margin-right: 1em;
+	border: white solid 3px;
+	border-radius: 10px;
 }
 
 h1 {
@@ -66,8 +84,8 @@ h3 {
 	margin-bottom: 1.8em;
 	height: 7em;
 	padding-top: 1em;
+	padding-left: 4.125em;
 }
-
 #banner a{
 	text-decoration: none;
 	color: white;
@@ -80,7 +98,9 @@ h3 {
 #wrapper {
 	min-height: calc(100% - 80px);
 }
-
+#space {
+	height: 7em;
+}
 #footer{
 	border-top: 1px solid black;
 	padding: 0;
@@ -130,8 +150,47 @@ li a {
 }
 .loginButton:hover, .loginButton:active {
 	background-color: #1F78ED;
-}
+}	
 /* End of general */
+
+/* Start of home page */
+
+#homeTitle {
+	font-size: 6em;
+	text-align: center;
+	margin-top: 1em;
+}
+
+.divider {
+	border: 2px solid black;
+	margin: 2em 5em 0;
+}
+
+#home {
+	text-align: center;
+	margin: 2em 20em 0;
+}
+
+#studentHome {
+	float: left;
+	background-color: rgba(0,0,0,0.3);
+	padding: 3em;
+	border-radius: 25px;
+}
+
+#teacherHome {
+	float: right;
+	background-color: rgba(0,0,0,0.3);
+	padding: 3em;
+	border-radius: 25px;
+}
+
+#home .button {
+	display: block;
+	margin-bottom: 2em;
+}
+
+/* End of home page
 
 /* Start of mainstage */
 #game h2 {
@@ -170,14 +229,53 @@ li a {
 }
 /*End of mainstage */
 
+/*Start of favourites */
+
+#favourites {
+	margin-left: 5em;
+}
+#favourites .button {
+	text-align: center;
+}
+/*End of favourites */
+
+/*Start of instructions/about */
+
+#instructions {
+	margin-left: 5em;
+	margin-right: 5em;
+}
+#instructions .button {
+	text-align: center;
+	display: block;
+}
+.teampic {
+	display: inline-block;
+	margin: 1em;
+}
+/*End of instructions */
+
 /*Start of gameover */
 
-#gameover {
+#gameover, #gamewin {
 	text-align: center;
 }
 
 #gameover h2 {
 	margin-bottom: 3em;
+}
+
+#gamewin h2 {
+	margin-bottom: 2em;
+}
+
+#gamewin h3 {
+	margin-bottom: 2em;
+}
+
+#gamewin .button {
+	margin-left: 1em;
+	margin-right: 1em;
 }
 
 /*End of gameover */
@@ -294,6 +392,24 @@ form {
 #settings {
 	text-align: center;
 }
+#confirm {
+	margin-top: 6em;
+}
+.search {
+	background-color: rgba(0,0,0,0.3);
+	padding: 1em;
+	border-radius: 25px;
+	margin: 1.5em 20em 1.5em;
+}
+.searchBar {
+	width: 15em;
+	height: 2em;
+	font-size: 1em;
+	padding-left: 5px;
+}
+.search .button {
+	margin: 0;
+}
 #settings select {
 	margin-right: 0.8em;
 	padding: 0.2em 1em 0;
@@ -301,6 +417,7 @@ form {
 #settings input {
 	margin-right: 0.8em;
 }
+.
 .settingsButton {
 	padding: 0.6em 2em 0.4em;
 	border: 1px solid black;

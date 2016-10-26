@@ -14,7 +14,8 @@
 
 	
 	if (isset($_SESSION['username'])) {
-		echo "Welcome ".$_SESSION['username']; 
+		echo "<div id='userwelcome'> Welcome ".$_SESSION['username']."&nbsp |</div>"; 
+		echo "<div id='idnum'> Connected to teacher ID: ".$_SESSION['ID']."</div>";
 	}
 	
 ?>
@@ -31,16 +32,19 @@
 <body>
 
 <div id="wrapper">
+<a href="student_main.php"><img src="./image/home.png" height="50px"></a></p>
 	<div id="banner">
+	
 		<a href="student_main.php"><h1>CARDMATCH</h1></a>
 		<p><h3>The Learning Game</h3></p>
+		
 	</div>
 	
-	<a href="student_main.php"><img src="./image/home.png" height="50px"></a></p>
+	
 	
 	<div id="student_main">
 		<div><a class="button" href="stage.php">Play</a></div>
-		<div><a class="button" href="favourites.html">Favorites</a></div>
+		<div><a class="button" href="favourites.html">Favourites</a></div>
 		<div><a class="button" href="student_instructions.php">Instructions</a></div>
 		<div><a class="button" href="logoutconnect.php">Log Out</a></div>
 	</div>

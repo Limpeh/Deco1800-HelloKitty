@@ -18,27 +18,30 @@
 		<p><h3>The Learning Game</h3></p>
 	</div>
 	
-<h2>Sign Up</h2>
+
 	<form action = "teacherconnect.php" method ="post">
-	<div id="Teacher">
+	<div id="sign_in">
+		<h2>Sign Up</h2>
 		<p><label for="username">Username</label></p>
 		<p><input type="text" id="username" name="username" placeholder="Username"/></p>
 
 		<p><label for="password">Password</label></p>
-		<p><input type="password" id="password" name="password" placeholder="Password"/></p>			
-		<p><input type="submit" value="submit"></p>
+		<p><input type="password" id="password" name="password" placeholder="Password"/></p>
+		<p>You will be provided with a teacher ID for your students to access.</p>
+		<p><input class="loginButton" type="submit" value="Submit"></p>
+		<p><a class="loginButton" href="index.php">Back</a></p>
 	</div>
 	</form>
-	<p><a href="index.php">Back</a></p>
+	
 
 	
 </div>
-<footer id="footer">
+<div id="footer">
 	<ul>	
 		<li><a href="#"/>Contact us</a></li>
 		<li> | </li>
-		<li><a href="#"/>About us</a></li>
+		<li><a href="student_instructions.php"/>About us</a></li>
 	</ul>
-</footer>
+</div>
 </body>
 </html>

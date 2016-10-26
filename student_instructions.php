@@ -14,7 +14,8 @@
 
 	
 	if (isset($_SESSION['username'])) {
-		echo "Welcome ".$_SESSION['username']; 
+		echo "<div id='userwelcome'> Welcome ".$_SESSION['username']."&nbsp |</div>"; 
+		echo "<div id='idnum'> Connected to teacher ID: ".$_SESSION['ID']."</div>";
 	}
 	
 ?>
@@ -36,7 +37,7 @@
 	</div>
 	
 	<a href="student_main.php"><img src="./image/home.png" height="50px"></a></p>
-	
+	<div id="instructions">
 	<h3>Student Instructions</h3>
 	
 		<ul>
@@ -44,7 +45,7 @@
 			<li>Ensure that the text matches the image</li>
 			<li>Add the cards that interest you to your list of favourites!</li>
 		</ul>
-	
+	</div>
 	
 	
 
@@ -55,7 +56,7 @@
 	<ul>	
 		<li><a href="#"/>Contact us</a></li>
 		<li> | </li>
-		<li><a href="#"/>About us</a></li>
+		<li><a href="about.php"/>About us</a></li>
 	</ul>
 </div>
 </body>

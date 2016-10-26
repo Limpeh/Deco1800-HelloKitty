@@ -50,7 +50,7 @@
 			<p>New to Cardmatch? Click here to sign up!</p>
 			<p><input class="loginButton" id="signup" type="submit" value="Sign Up"></p>
 			<p>Are you a student? Click here to sign in instead.</p>
-			<a class="loginButton" href="index.php">Student Login</a>
+			<a class="loginButton" href="studentlogin.php">Student Login</a>
 		</div>
 
 

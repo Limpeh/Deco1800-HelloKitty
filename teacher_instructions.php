@@ -30,6 +30,7 @@
 
 <body>
 <div id="wrapper">
+	<a href="teacher_main.php"><img src="./image/home.png" height="50px"></a></p>
 	<div id="banner">
 		<a href="teacher_main.php"><h1>CARDMATCH</h1></a>
 		<p><h3>The Learning Game</h3></p>
@@ -38,25 +39,26 @@
 	<a href="teacher_main.php"><img src="./image/home.png" height="50px"></a></p>
 	
 	
-	<h3>Teacher Instructions</h3>
-	
+	<h2>Instructions</h2>
+	<div id="instructions">
 		<ul>
 			<li>Enter keyword of interested topic</li>
 			<li>Select the cards you are interested in</li>
 			<li>Save the stage</li>
 		</ul>
-	
+	</div>
 	
 	
 
 	
-	<div id="footer">
-		<ul>	
-			<li><a href="#"/>Contact us</a></li>
-			<li> | </li>
-			<li><a href="#"/>About us</a></li>
-		</ul>
-	</div>
+	
+</div>
+<div id="footer">
+	<ul>	
+		<li><a href="teacher_contact.php"/>Contact us</a></li>
+		<li> | </li>
+		<li><a href="about.php"/>About us</a></li>
+	</ul>
 </div>
 
 </body>

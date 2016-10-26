@@ -67,22 +67,16 @@ stagnant. </p>
 	<p><h3>Jowin Yien</h3></p>
 	<p><img src="./image/jowin.gif" alt="Jowin" height="100px" width="100px"></p>
 </div>
-<p><a class="button"><button onclick="goBack()">Back</a></p>
+<p><a class="button" href="student_main.php">Back</a></p>
 </div>
 
 
 <div id="footer">
 	<ul>	
-		<li><a href="contact.php"/>Contact us</a></li>
+		<li><a href="teacher_contact.php"/>Contact us</a></li>
 		<li> | </li>
-		<li><a href="about.php"/>About us</a></li>
+		<li><a href="about_teacher"/>About us</a></li>
 	</ul>
 </div>
-<script>
-function goBack() {
-    window.history.back();
-}
-</script>
 </body>
 </html>
-

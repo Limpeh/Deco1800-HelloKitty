@@ -15,9 +15,10 @@
 		<p><h3>The Learning Game</h3></p>
 	</div>
 
-<h2>Sign Up</h2>
+
 <form action="studentconnect.php" method="post">
-	<div id="Student">
+	<div id="sign_in">
+		<h2>Sign Up</h2>
 		<p><label for="username">Username</label></p>
 		<p><input type="text" id="username" name="username" placeholder="Username"/></p>
 
@@ -26,24 +27,24 @@
 
 		<p><label for="teacher_id">TeacherID</label></p>
 		<p><input type="text" id="teacher_id" name="teacher_id" placeholder="Eg. 4410615"/></p>
-
+		<p><input class="loginButton" type="submit" value="Sign Up"></p>
+		
+	<p><a class="loginButton" href="index.php">Back</a></p>
 	</div>
-			
-	<p><input type="submit" value="Sign Up"></p>
-</form>
-	<p><a href="index.php">Back</a></p>
+</form>			
+	
 
 	
 
 
 	
 </div>
-<footer id="footer">
+<div id="footer">
 	<ul>	
 		<li><a href="#"/>Contact us</a></li>
 		<li> | </li>
 		<li><a href="#"/>About us</a></li>
 	</ul>
-</footer>
+</div>
 </body>
 </html>
