@@ -31,12 +31,13 @@
 		<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 	</head>
 	<body>
+	<a href="student_main.php"><img src="./image/home.png" height="50px"></a></p>
 	<div id="banner">
-			<h1>CARDMATCH</h1>
+			<a href="student_main.php"><h1>CARDMATCH</h1></a>
 			<h3>The learning game</h3>
 	</div>
 	
-	<a href="student_main.php"><img src="./image/home.png" height="50px"></a></p>
+	
 	
 	<div id="game">
 		<h2>Stage</h2>
