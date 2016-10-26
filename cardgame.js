@@ -186,7 +186,7 @@ var id = [];
 			id[1]="eggsegs";
 		}
 		if (score == 3){
-			window.location='stagewin.html'
+			window.location='stagewin.php'
 		}
 		e.stopPropagation();
 	});
