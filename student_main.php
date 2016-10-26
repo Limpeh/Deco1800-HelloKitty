@@ -44,7 +44,7 @@
 	
 	<div id="student_main">
 		<div><a class="button" href="stage.php">Play</a></div>
-		<div><a class="button" href="favourites.html">Favourites</a></div>
+		<div><a class="button" href="favourites.php">Favourites</a></div>
 		<div><a class="button" href="student_instructions.php">Instructions</a></div>
 		<div><a class="button" href="logoutconnect.php">Log Out</a></div>
 	</div>
