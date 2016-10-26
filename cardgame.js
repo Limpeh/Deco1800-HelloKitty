@@ -55,9 +55,7 @@ var hid = 0;
 var score = 0;
 var cheque = 0;
 var id = [];
-$(document).ready(function(){
 
-})
 
 /****//****//****//****//****//****//****//****//****//****//****//***/
 ///////////////////////////////////////////////////////////////////////
@@ -120,7 +118,7 @@ $(document).ready(function(){
 			console.log(id[hid-1]);
 			if (hid==2){
 			if (id[1]==id[0] && cheque == 1){
-				console.log("yay");
+				console.log(score);
 				$("."+id[0]).remove();
 				$(".A"+id[0]).remove();
 				score++;
@@ -148,6 +146,9 @@ $(document).ready(function(){
 			$("#show").children().children().fadeOut(5000);
 			
 	}
+		if (score == 3){
+			window.location='stagewin.html'
+		}
 		e.stopPropagation();
 	});
 //	$("#outputImg").append("<div class='front'>front</div>").append("<div class='back'>back</div>");
@@ -159,7 +160,7 @@ $(document).ready(function(){
 			console.log(id[hid-1]);
 			if (hid==2){
 			if (id[1]==id[0]&& cheque == 1){
-					console.log("yay");
+					console.log(score);
 					$("."+id[0]).remove();
 					$(".A"+id[0]).remove();
 					postCard(id[0]);
@@ -183,6 +184,9 @@ $(document).ready(function(){
 			$("#show").children().children().fadeOut(5000);
 			id[0]=null;
 			id[1]="eggsegs";
+		}
+		if (score == 3){
+			window.location='stagewin.html'
 		}
 		e.stopPropagation();
 	});
@@ -211,7 +215,6 @@ function contdraw(){
 	};
 	
 		function postCard(keyword){
-			console.log(setcards.length);
 		for (var i=0; i<setcards.length; i++){
 			if (keyword == setcards[i].keyword){
 				loadCard= setcards[i]
