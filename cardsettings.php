@@ -32,7 +32,7 @@
 	<body>
 	<a href="teacher_main.php"><img src="./image/home.png" height="50px"></a></p>
 		<div id="banner">
-			<h1>CARDMATCH</h1>
+			<a href = "teacher_main.php"><h1>CARDMATCH</h1></a>
 			<h3>The learning game</h3>
 		</div>
 		
