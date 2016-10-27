@@ -46,8 +46,8 @@
 			<h1 id="clock">60</h1>
 		</div>
 		<div id="scoreCount">
-			<h2>Score:</h2>
-			<h1 id="score">0</h1>
+			<h2>Matches remaining:</h2>
+			<h1 id="score">3</h1>
 		</div>
 	</div>
 	<script>

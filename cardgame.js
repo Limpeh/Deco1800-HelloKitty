@@ -52,7 +52,7 @@ class CardSet{
 }
 
 var hid = 0;
-var score = 0;
+var score = 3;
 var cheque = 0;
 var id = [];
 
@@ -103,6 +103,8 @@ var id = [];
 			
 	}
 	
+	
+	
 	$(document).ready(function(){
 		useid = parseInt($("#idnum").text());
 		console.log(useid);
@@ -121,7 +123,7 @@ var id = [];
 				console.log(score);
 				$("."+id[0]).remove();
 				$(".A"+id[0]).remove();
-				score++;
+				score--;
 				postCard(id[0]);
 				$("#score").empty();
 				$("#score").append(score);
@@ -131,8 +133,8 @@ var id = [];
 				cheque = 0;
 				id[0]=null;
 				id[1]="eggsegs";
-				$(this).children().fadeOut(5000);
-				$("#show").children().children().fadeOut(5000);
+				$(this).children().delay(3000).fadeOut(500);
+				$("#show").children().children().delay(3000).fadeOut(500);
 
 			}}
 
@@ -142,11 +144,11 @@ var id = [];
 			cheque = 0;
 			id[0]=null;
 			id[1]="eggsegs";
-			$(this).children().fadeOut(5000);
-			$("#show").children().children().fadeOut(5000);
+			$(this).children().delay(3000).fadeOut(500);
+			$("#show").children().children().delay(3000).fadeOut(500);
 			
 	}
-		if (score == 3){
+		if (score == 0){
 			window.location='stagewin.html'
 		}
 		e.stopPropagation();
@@ -164,7 +166,7 @@ var id = [];
 					$("."+id[0]).remove();
 					$(".A"+id[0]).remove();
 					postCard(id[0]);
-					score++;
+					score--;
 					$("#score").empty();
 					$("#score").append(score);
 			} else {
@@ -173,15 +175,15 @@ var id = [];
 			cheque = 0;
 			id[0]=null;
 			id[1]="eggsegs";
-			$(this).children().fadeOut(5000);
-			$("#show").children().children().fadeOut(5000);
+			$(this).children().delay(3000).fadeOut(500);
+			$("#show").children().children().delay(3000).fadeOut(500);
 			}}
 		} else {
 			$(this).children().show();
 			hid=0;
 			cheque = 0;
-			$(this).children().fadeOut(5000);
-			$("#show").children().children().fadeOut(5000);
+			$(this).children().delay(3000).fadeOut(500);
+			$("#show").children().children().delay(3000).fadeOut(500);
 			id[0]=null;
 			id[1]="eggsegs";
 		}

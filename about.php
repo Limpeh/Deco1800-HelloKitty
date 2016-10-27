@@ -68,7 +68,7 @@ stagnant. </p>
 	<p><img src="./image/jowin.gif" alt="Jowin" height="100px" width="100px"></p>
 
 </div>
-<p><a class="button"><button onclick="goBack()">Back</a></p>
+<p><button class="button" onclick="goBack()">Back</button></p>
 </div>
 
 

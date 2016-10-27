@@ -44,7 +44,7 @@
 	<div class="wrap" id="show"></div>
 	<form action="#" id="Test">
 	</form>
-	<script src="favescreen.js" type="text/javascript"></script> 
-	</body>
+	<div id="links"></div>
+	<script src="favescreen.js" type="text/javascript"></script>
 	</body>
 </html>

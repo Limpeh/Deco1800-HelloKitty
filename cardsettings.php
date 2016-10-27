@@ -44,7 +44,7 @@
 			<!-- <form action="#" id="Test">
 				<button class="button" type="submit" id="tstbtn">test</button>
 			</form> -->
-			<h3>Enter a search term to generate cards. Click on the two most appropriate cards.
+			<h3>Enter a search term to generate cards. Click on the two most appropriate cards. (Make at least 3 pairs)</h3>
 			<form class="search" action="#" id="searchTrove">
 				<input class="searchBar" id="searchTerm" type="text"  placeholder="Enter a keyword"/>
 				<button class="button" type="submit" id="searchbtn">Search</button>
