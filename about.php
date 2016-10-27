@@ -31,12 +31,12 @@
 </head>
 <body>
 <div id="banner">
-		<a href="login.html"><h1>CARDMATCH</h1></a>
+<a href="teacher_main.php"><img src="./image/home.png" height="50px"></a></p>
+		<a><h1>CARDMATCH</h1></a>
 		<h3>The Learning Game</h3>
 </div>
 
 <body>
-<a href="teacher_main.php"><img src="./image/home.png" height="50px"></a></p>
 <div id="instructions">
 <h1>About CardMatch</h1>
 <p>Our group intends to construct a web-based application that is geared towards providing
@@ -66,6 +66,7 @@ stagnant. </p>
 <div class="teampic">
 	<p><h3>Jowin Yien</h3></p>
 	<p><img src="./image/jowin.gif" alt="Jowin" height="100px" width="100px"></p>
+
 </div>
 <p><a class="button"><button onclick="goBack()">Back</a></p>
 </div>
