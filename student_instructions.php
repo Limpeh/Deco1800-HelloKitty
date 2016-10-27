@@ -31,12 +31,12 @@
 
 <body>
 <div id="wrapper">
+<a href="student_main.php"><img src="./image/home.png" height="50px"></a></p>
 	<div id="banner">
 		<a href="student_main.php"><h1>CARDMATCH</h1></a>
 		<p><h3>The Learning Game</h3></p>
 	</div>
 	
-	<a href="student_main.php"><img src="./image/home.png" height="50px"></a></p>
 	<div id="instructions">
 	<h3>Student Instructions</h3>
 	
