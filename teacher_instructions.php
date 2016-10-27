@@ -14,7 +14,8 @@
 
 	
 	if (isset($_SESSION['username'])) {
-		echo "Welcome ".$_SESSION['username']; 
+		echo "<div id='userwelcome'> Welcome ".$_SESSION['username']."&nbsp |</div>"; 
+		echo "<div id='idnum'> Connected to teacher ID: ".$_SESSION['ID']."</div>";
 	}
 	
 ?>

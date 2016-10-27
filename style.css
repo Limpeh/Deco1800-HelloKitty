@@ -150,6 +150,7 @@ li a {
 }
 .loginButton:hover, .loginButton:active {
 	background-color: #1F78ED;
+	cursor: pointer;
 }	
 /* End of general */
 

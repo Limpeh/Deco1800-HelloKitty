@@ -72,6 +72,9 @@
 			<script src="cardmatch.js" type="text/javascript"></script> 
 		</div>
 		<div id="space"></div>
+		<div id="space"></div>
+		<div id="space"></div>
+		<div id="space"></div>
 		<div id="footer">
 			<ul>	
 				<li><a href="#"/>Contact Us</a></li>
