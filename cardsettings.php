@@ -64,6 +64,7 @@
 				<input class="button" type="submit" value="Confirm"></input>
 			</form>
 		</div>
+		
 		<div class="wrap">
 			<form action="#" id="Images">
 			</form>
@@ -72,6 +73,9 @@
 			<script src="cardmatch.js" type="text/javascript"></script> 
 		</div>
 		<div id="space"></div>
+		<div id="settings">
+			<p><a class="button" href="teacher_main.php">Back</a></p>
+		</div>
 		<div id="space"></div>
 		<div id="space"></div>
 		<div id="space"></div>
