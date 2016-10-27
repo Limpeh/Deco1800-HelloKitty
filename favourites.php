@@ -33,7 +33,7 @@
 	</head>
 	<body>
 	<div id="banner">
-			<h1>CARDMATCH</h1>
+			<a href = "student_main.php"><h1>CARDMATCH</h1></a>
 			<h3>The learning game</h3>
 	</div>
 	<div id="favourites">
