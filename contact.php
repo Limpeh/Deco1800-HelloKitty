@@ -30,41 +30,41 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 </head>
 <body>
+<div id="wrapper">
 <a href="teacher_main.php"><img src="./image/home.png" height="50px"></a></p>
 <div id="banner">
 		<a href="login.html"><h1>CARDMATCH</h1></a>
 		<h3>The Learning Game</h3>
 </div>
 
-<body>
 <div id="instructions">
 <h1>Contact Us</h1>
 
-<h1>Team Members</h1>
-<div class="teampic">
-	<p><h3>Sim Wei Jie</h3></p>
-	<p><img src="./image/sim wei.gif" alt="Sim Wei Jie" height="100px" width="100px"></p>
+<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+	<div class="row">
+		<label for="name">Your name:</label><br />
+		<input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+	</div>
+	<div class="row">
+		<label for="email">Your email:</label><br />
+		<input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+	</div>
+	<div class="row">
+		<label for="message">Your message:</label><br />
+		<textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+	</div>
+	<input class="button" id="submit_button" type="submit" value="Send email" />
+	<p><button class="button" onclick="goBack()">Back</button></p>	
+</form>	
+	
 </div>
-<div class="teampic">
-	<p><h3>Kurt Mahaffey</h3></p>
-	<p><img src="./image/kurt.gif" alt="Kurt" height="100px" width="100px"></p>
 </div>
-<div class="teampic">
-	<p><h3>Ben Wilde</h3></p>
-	<p><img src="./image/ben.gif" alt="Ben" height="100px" width="100px"></p>
-</div>
-<div class="teampic">
-	<p><h3>Jowin Yien</h3></p>
-	<p><img src="./image/jowin.gif" alt="Jowin" height="100px" width="100px"></p>
-</div>
-<p><a class="button" href="student_main.php">Back</a></p>
-</div>
-
+<div id="space"></div>
 <div id="footer">
 	<ul>	
-		<li><a href="#"/>Contact us</a></li>
+		<li><a href="contact.php"/>Contact us</a></li>
 		<li> | </li>
-		<li><a href="about_teacher"/>About us</a></li>
+		<li><a href="about.php"/>About us</a></li>
 	</ul>
 </div>
 </body>
