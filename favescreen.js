@@ -66,7 +66,10 @@ var id = [];
 	var json;
 	var check = 0;
 	var useid;
-
+	var cards;
+	var qu=0;
+	var image;
+		var earlout = [];
 
 (function($){
 	function getCard(teachID){
@@ -99,23 +102,38 @@ var id = [];
 	});
 	
 function contdraw(){	
-	
+	var earl;
+	var cheese;
+	qu =0;
 	for (var i=0;i<json.length; i++){
 			cards = setcards;
 			console.log(cards);
-			var image = new Image();
-			image.src = cards[i].imageurl;
-			image.style.display = "inline-block";
-			image.style.width = "90%";
-			image.style.margin = "1%";
-			image.style.verticalAlign = "top";
-			$("#show").append(" <div class = '"+cards[i].keyword+"'id='outputImg'></div>");
-			$("."+cards[i].keyword).append(image);
-			$("#show").append("<div class = 'A"+cards[i].keyword+"'id='outputArt'></div>");
-			$(".A"+cards[i].keyword).append(cards[i].excerpt);
+			$.getJSON(encodeURI(cards[i].articleurl), function(data){
+				earl = data.article.troveUrl;
+				earlout.push(earl);
+				contcondraw(qu)
+			});
 		}
 	//	$("#outputImg").children().hide();
 		//$("#outputArt").children().hide();
 	};
+	function contcondraw(i){
+			console.log(earlout[qu]);
+			image = new Image();
+			image.src = cards[qu].imageurl;
+			image.style.display = "inline-block";
+			image.style.width = "90%";
+			image.style.margin = "1%";
+			image.style.verticalAlign = "top";
+			$("#show").append("<div class = '"+cards[qu].keyword+"'id='outputImg'></div>");
+			$("."+cards[qu].keyword).append(image);
+			$("."+cards[qu].keyword).wrap($("<a>").attr("href", cards[i].imageurl));
+			$("#show").append("<div class = 'A"+cards[qu].keyword+"'id='outputArt'></div>");
+		    $(".A"+cards[qu].keyword).append(cards[qu].excerpt);
+			$(".A"+cards[qu].keyword).wrap($("<a>").attr("href", earlout[qu]));
+			qu++;
+	
+		
+	}
     }(jQuery));
 
