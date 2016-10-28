@@ -243,9 +243,11 @@ li a {
 /*Start of instructions/about */
 
 #instructions {
+	text-align: center;
 	margin-left: 5em;
 	margin-right: 5em;
 }
+
 #instructions .button {
 	text-align: center;
 	display: block;

@@ -38,12 +38,12 @@
 	</div>
 	
 	<div id="instructions">
-	<h3>Student Instructions</h3>
+		<h2>Student Instructions</h2>
 	
 		<ul>
-			<li>Select 2 cards</li>
-			<li>Ensure that the text matches the image</li>
-			<li>Add the cards that interest you to your list of favourites!</li>
+			<li> To play the game, select an image card and a text card. If they don't match
+			the cards will revert back to<br> it's original form. Once all the cards are matched you can head on over to favourites for viewing of all the cards.</li>
+
 		</ul>
 	</div>
 	
