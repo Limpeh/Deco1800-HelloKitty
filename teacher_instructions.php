@@ -37,12 +37,14 @@
 		<p><h3>The Learning Game</h3></p>
 	</div>
 	
-	<h2>Instructions</h2>
 	<div id="instructions">
+	<h2>Instructions</h2>
 		<ul>
-			<li>Enter keyword of interested topic</li>
-			<li>Select the cards you are interested in</li>
-			<li>Save the stage</li>
+			<li>Stage Customization will be where you are able to create a set of cards <br>that will be shown to the students when they are playing the game</li>
+			<br>
+			<li>When you are getting your students to register, do remember to provide them <br>with your teacher ID. The teacher ID can be found on the top left section of the page. </li>
+			
+
 		</ul>
 	</div>
 	
