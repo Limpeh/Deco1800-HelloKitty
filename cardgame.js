@@ -135,7 +135,7 @@ var id = [];
 				cheque = 0;
 				id[0]=null;
 				id[1]="eggsegs";
-				$(this).children().delay(3000).fadeOut(500);
+				//$(this).children().delay(3000).fadeOut(500);
 				$("#show").children().children().delay(3000).fadeOut(500);
 
 			}}
@@ -146,7 +146,7 @@ var id = [];
 			cheque = 0;
 			id[0]=null;
 			id[1]="eggsegs";
-			$(this).children().delay(3000).fadeOut(500);
+			//$(this).children().delay(3000).fadeOut(500);
 			$("#show").children().children().delay(3000).fadeOut(500);
 			
 	}
@@ -179,14 +179,14 @@ var id = [];
 			cheque = 0;
 			id[0]=null;
 			id[1]="eggsegs";
-			$(this).children().delay(3000).fadeOut(500);
+			//$(this).children().delay(3000).fadeOut(500);
 			$("#show").children().children().delay(3000).fadeOut(500);
 			}}
 		} else {
 			$(this).children().show();
 			hid=0;
 			cheque = 0;
-			$(this).children().delay(3000).fadeOut(500);
+			//$(this).children().delay(3000).fadeOut(500);
 			$("#show").children().children().delay(3000).fadeOut(500);
 			id[0]=null;
 			id[1]="eggsegs";
