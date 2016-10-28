@@ -117,6 +117,7 @@ var id = [];
 			id[hid] = $(this).attr("class").substring(1);
 			hid++;
 			cheque++;
+			console.log(hid-1);
 			console.log(id[hid-1]);
 			if (hid==2){
 			if (id[1]==id[0] && cheque == 1){
@@ -127,6 +128,7 @@ var id = [];
 				postCard(id[0]);
 				$("#score").empty();
 				$("#score").append(score);
+				hid = 0;
 			} else {
 				$(this).children().show();
 				hid=0;
@@ -159,6 +161,7 @@ var id = [];
 			$(this).children().show();
 			id[hid] = $(this).attr("class");
 			hid++;
+			console.log(hid-1);
 			console.log(id[hid-1]);
 			if (hid==2){
 			if (id[1]==id[0]&& cheque == 1){
@@ -169,6 +172,7 @@ var id = [];
 					score--;
 					$("#score").empty();
 					$("#score").append(score);
+					hid = 0;
 			} else {
 			$(this).children().show();
 			hid=0;
@@ -208,7 +212,7 @@ function contdraw(){
 			$("#show").append(" <div class = '"+cards[i].keyword+"'id='outputImg'></div>");
 			$("."+cards[i].keyword).append(image);
 			$("#show").append("<div class = 'A"+cards[i].keyword+"'id='outputArt'></div>");
-			$(".A"+cards[i].keyword).append(cards[i].excerpt);
+			$(".A"+cards[i].keyword).append("<span>"+cards[i].excerpt);
 			$("."+cards[i].keyword).children().hide();
 			$(".A"+cards[i].keyword).children().hide();
 		}
