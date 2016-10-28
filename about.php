@@ -70,7 +70,7 @@ stagnant. </p>
 </div>
 <p><button class="button" onclick="goBack()">Back</button></p>
 </div>
-
+<div id="space"></div>
 
 <div id="footer">
 	<ul>	

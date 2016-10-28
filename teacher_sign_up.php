@@ -38,9 +38,9 @@
 </div>
 <div id="footer">
 	<ul>	
-		<li><a href="#"/>Contact us</a></li>
+		<li><a href="contact.php"/>Contact us</a></li>
 		<li> | </li>
-		<li><a href="student_instructions.php"/>About us</a></li>
+		<li><a href="about.php"/>About us</a></li>
 	</ul>
 </div>
 </body>

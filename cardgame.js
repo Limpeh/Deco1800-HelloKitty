@@ -149,7 +149,7 @@ var id = [];
 			
 	}
 		if (score == 0){
-			window.location='stagewin.html'
+			window.location='stagewin.php'
 		}
 		e.stopPropagation();
 	});
@@ -187,7 +187,7 @@ var id = [];
 			id[0]=null;
 			id[1]="eggsegs";
 		}
-		if (score == 3){
+		if (score == 0){
 			window.location='stagewin.php'
 		}
 		e.stopPropagation();
@@ -217,9 +217,13 @@ function contdraw(){
 	};
 	
 		function postCard(keyword){
-		for (var i=0; i<setcards.length; i++){
-			if (keyword == setcards[i].keyword){
-				loadCard= setcards[i]
+			console.log("hello sailor");
+			
+		for (var i=0; i<json.length; i++){
+			console.log(json[i].keyword);
+			if (keyword == json[i].keyword){
+				loadCard= json[i];
+				
 			}
 		}
 		$.post("favepost.php", 
